@@ -30,15 +30,15 @@ export default function AppleLanguageChanger() {
   const previous = prevIndex !== null ? APPLE_LANGUAGES[prevIndex] : null;
 
   const renderWord = (item: AppleLanguageItem) => {
-    const isEnglish = item.id === "en";
+    const isLatin = item.id === "en" || item.id === "fr" || item.id === "es";
 
     return (
       <h1
         className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-[32px] text-white whitespace-nowrap leading-none"
         style={{
-          fontFamily: isEnglish ? "'Montserrat', sans-serif" : item.fontFamily,
-          fontWeight: isEnglish ? 600 : item.fontWeight || 500, // Montserrat SemiBold (600)
-          letterSpacing: isEnglish ? "0.14em" : item.letterSpacing || "normal",
+          fontFamily: isLatin ? "'Montserrat', sans-serif" : item.fontFamily,
+          fontWeight: isLatin ? 600 : item.fontWeight || 500, // Montserrat SemiBold (600) for Latin scripts
+          letterSpacing: isLatin ? "0.14em" : item.letterSpacing || "normal",
         }}
       >
         {item.text}
@@ -47,7 +47,7 @@ export default function AppleLanguageChanger() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center text-center select-none w-full max-w-sm sm:max-w-md md:max-w-xl px-2 sm:px-4 -mt-8 sm:-mt-12 md:-mt-16">
+    <div className="flex flex-col items-center justify-center text-center select-none w-full max-w-sm sm:max-w-md md:max-w-xl px-2 sm:px-4 mt-2 sm:mt-3 md:mt-4">
       {/* Dynamic Word Stage with Mobile-Friendly Overlapping Crossfade */}
       <div className="relative w-full h-8 xs:h-9 sm:h-11 md:h-14 flex items-center justify-center overflow-visible">
         {/* Previous Word (fading out smoothly) */}
