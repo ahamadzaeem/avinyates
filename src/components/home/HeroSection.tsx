@@ -9,8 +9,6 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-
   return (
     <div className="relative min-h-[100dvh] w-full bg-black text-white flex flex-col justify-between overflow-hidden select-none">
       {/* 4K Rotating Earth Background Video (Normal Speed) */}
@@ -28,26 +26,45 @@ export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
       <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-black/10 pointer-events-none z-10" />
 
       {/* Navigation Bar - Exactly Matching Reference Image */}
-      <header className="relative z-30 w-full px-6 sm:px-10 md:px-14 lg:px-16 xl:px-[72px] pt-7 sm:pt-8 md:pt-10 lg:pt-11 flex items-center justify-between">
-        {/* Brand Logo Lockup: Ai Infinity + AVINYATES INDIA + Inspiring Innovation */}
+      <header className="relative z-30 w-full px-5 sm:px-8 md:px-12 lg:px-16 xl:px-[72px] pt-6 sm:pt-7 md:pt-9 lg:pt-10 flex items-center justify-between">
+        {/* Brand Logo Lockup: Chrome Emblem + Montserrat Typography */}
         <a
           href="#"
-          className="relative w-48 sm:w-56 md:w-64 lg:w-[276px] h-11 sm:h-12 md:h-14 lg:h-15 flex items-center group transition-transform duration-300 hover:scale-[1.02]"
-          aria-label="Avinyates India Home"
+          className="flex items-center gap-2.5 sm:gap-3.5 md:gap-4 select-none group transition-transform duration-300 hover:scale-[1.01]"
+          aria-label="AVINYATES INDIA"
         >
-          <Image
-            src="/logo_transparent.png"
-            alt="AVINYATES INDIA - Inspiring Innovation"
-            fill
-            priority
-            sizes="(max-width: 640px) 192px, (max-width: 1024px) 256px, 280px"
-            className="object-contain object-left drop-shadow-[0_2px_15px_rgba(0,0,0,0.85)]"
-          />
+          {/* 3D Chrome Infinity Emblem (A + Infinity + i) */}
+          <div className="relative w-11 sm:w-13 md:w-16 lg:w-[72px] h-6 sm:h-7 md:h-8 lg:h-[36px] shrink-0">
+            <Image
+              src="/chrome_emblem.png"
+              alt="Avinyates Emblem"
+              fill
+              priority
+              sizes="(max-width: 640px) 44px, (max-width: 1024px) 64px, 72px"
+              className="object-contain object-left drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]"
+            />
+          </div>
+
+          {/* Typography Lockup */}
+          <div className="flex flex-col items-center">
+            <span
+              className="text-white text-xs sm:text-sm md:text-base lg:text-[17.5px] xl:text-[18.5px] font-semibold tracking-[0.14em] uppercase leading-none whitespace-nowrap drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              AVINYATES INDIA
+            </span>
+            <span
+              className="text-neutral-400 text-[7px] sm:text-[8px] md:text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-normal tracking-[0.24em] leading-none mt-1 sm:mt-1.5 text-center whitespace-nowrap drop-shadow-[0_1px_6px_rgba(0,0,0,0.95)]"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              Inspiring Innovation
+            </span>
+          </div>
         </a>
 
-        {/* Desktop Nav Links: Exactly Our Story, Our Brands, Innovation, Contact */}
+        {/* Nav Links: Exactly Our Story, Our Brands, Innovation, Contact */}
         <nav
-          className="hidden md:flex items-center gap-8 md:gap-11 lg:gap-14 xl:gap-16 text-sm lg:text-[15px] font-normal text-neutral-300 drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]"
+          className="flex items-center gap-3.5 sm:gap-6 md:gap-9 lg:gap-13 xl:gap-16 text-[11px] sm:text-xs md:text-sm lg:text-[14.5px] font-normal drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]"
           style={{ fontFamily: "'Montserrat', sans-serif" }}
         >
           <a
@@ -75,75 +92,6 @@ export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
             Contact
           </a>
         </nav>
-
-        {/* Mobile Hamburger Toggle Button */}
-        <div className="flex md:hidden items-center">
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 -mr-2 text-neutral-300 hover:text-white focus:outline-none transition-colors duration-200"
-            aria-label="Toggle navigation menu"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {mobileMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
-        </div>
-
-        {/* Mobile Slide-Down Menu Overlay */}
-        {mobileMenuOpen && (
-          <div
-            className="absolute top-full left-0 right-0 mt-3 mx-4 p-6 bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl flex flex-col gap-5 text-center text-base font-normal text-neutral-200 shadow-2xl z-50 md:hidden animate-in fade-in slide-in-from-top-2 duration-200"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
-          >
-            <a
-              href="#story"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-white py-2 transition-colors border-b border-white/5"
-            >
-              Our Story
-            </a>
-            <a
-              href="#brands"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-white py-2 transition-colors border-b border-white/5"
-            >
-              Our Brands
-            </a>
-            <a
-              href="#innovation"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-white py-2 transition-colors border-b border-white/5"
-            >
-              Innovation
-            </a>
-            <a
-              href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-white py-2 transition-colors"
-            >
-              Contact
-            </a>
-          </div>
-        )}
       </header>
 
       {/* Main Hero Content (Left Aligned matching reference image) */}
