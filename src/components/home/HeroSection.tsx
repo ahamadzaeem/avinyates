@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 
@@ -9,47 +9,21 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    // Slow video playback speed by 50% (0.5x speed)
-    const setSlowPlayback = () => {
-      if (video.playbackRate !== 0.5) {
-        video.playbackRate = 0.5;
-      }
-    };
-
-    setSlowPlayback();
-    video.addEventListener("loadedmetadata", setSlowPlayback);
-    video.addEventListener("play", setSlowPlayback);
-    video.addEventListener("ratechange", setSlowPlayback);
-
-    return () => {
-      video.removeEventListener("loadedmetadata", setSlowPlayback);
-      video.removeEventListener("play", setSlowPlayback);
-      video.removeEventListener("ratechange", setSlowPlayback);
-    };
-  }, []);
-
   return (
     <div className="relative min-h-[100dvh] w-full bg-black text-white flex flex-col justify-between overflow-hidden select-none">
-      {/* 4K Rotating Earth Background Video - 50% Slow Motion, Ultra Crisp & Clear */}
+      {/* 4K Rotating Earth Background Video (Normal Speed) */}
       <video
-        ref={videoRef}
-        src="/earth_background.mp4"
+        src="/rotating_earth.mp4"
         autoPlay
         loop
         muted
         playsInline
         webkit-playsinline="true"
-        className="absolute inset-0 w-full h-full object-cover object-right md:object-center pointer-events-none z-0 brightness-[1.05] contrast-[1.08]"
+        className="absolute inset-0 w-full h-full object-cover object-right md:object-center pointer-events-none z-0"
       />
 
-      {/* Gentle, minimal text-contrast gradient on the far left only (leaves 80% of screen crystal clear) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent pointer-events-none z-10 w-full md:w-3/5" />
+      {/* Small, subtle dark overlay to keep video clear while elevating text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-black/10 pointer-events-none z-10" />
 
       {/* Navigation Bar */}
       <header className="relative z-20 w-full px-6 sm:px-10 md:px-16 py-6 sm:py-8 flex items-center justify-between">
