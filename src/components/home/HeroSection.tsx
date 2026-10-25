@@ -2,155 +2,131 @@
 
 import React from "react";
 import Image from "next/image";
-import { Sparkles, Globe2, ShieldCheck, Cpu, ArrowUpRight, PlayCircle } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 interface HeroSectionProps {
-  onReplayLoading: () => void;
+  onReplayLoading?: () => void;
 }
 
 export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
-  const divisions = [
-    {
-      title: "Advanced Technologies",
-      desc: "Next-generation software ecosystems, cloud infrastructure & sovereign AI models.",
-      icon: <Cpu className="w-5 h-5 text-cyan-400" />,
-      tag: "Deep Tech",
-    },
-    {
-      title: "Global Enterprise",
-      desc: "Cross-border conglomerate operations, supply chain resilience, and digital transformation.",
-      icon: <Globe2 className="w-5 h-5 text-indigo-400" />,
-      tag: "International",
-    },
-    {
-      title: "Sustainable Innovation",
-      desc: "Pioneering renewable energy transitions and next-gen material engineering.",
-      icon: <ShieldCheck className="w-5 h-5 text-emerald-400" />,
-      tag: "Ecosystems",
-    },
-  ];
-
   return (
-    <div className="relative min-h-[100dvh] bg-black text-white flex flex-col justify-between selection:bg-cyan-500/30 overflow-x-hidden">
-      {/* Background Ambient Lighting */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[340px] sm:w-[600px] md:w-[800px] h-[350px] sm:h-[450px] bg-cyan-600/10 blur-[100px] sm:blur-[140px] pointer-events-none rounded-full" />
-      <div className="absolute bottom-0 right-0 w-[280px] sm:w-[450px] h-[300px] bg-indigo-600/10 blur-[100px] sm:blur-[130px] pointer-events-none rounded-full" />
+    <div className="relative min-h-[100dvh] w-full bg-black text-white flex flex-col justify-between overflow-hidden select-none">
+      {/* 4K Rotating Earth Background Video */}
+      <video
+        src="/earth_background.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        webkit-playsinline="true"
+        className="absolute inset-0 w-full h-full object-cover object-right md:object-center pointer-events-none z-0"
+      />
+
+      {/* Subtle Dark Gradient on the left side to guarantee high-contrast legibility */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent pointer-events-none z-10 md:from-black/75 md:via-black/25" />
 
       {/* Navigation Bar */}
-      <header className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="relative w-28 sm:w-36 md:w-40 h-10 sm:h-12 md:h-14">
-            <Image
-              src="/logo_transparent.png"
-              alt="AVINYATES INDIA"
-              fill
-              className="object-contain"
-              priority
-              sizes="(max-width: 640px) 112px, 160px"
-            />
-          </div>
+      <header className="relative z-20 w-full px-6 sm:px-10 md:px-16 py-6 sm:py-8 flex items-center justify-between">
+        {/* Brand Logo Lockup: Ai Infinity + AVINYATES INDIA */}
+        <div className="relative w-48 sm:w-60 md:w-72 h-12 sm:h-14 md:h-16 flex items-center">
+          <Image
+            src="/logo_transparent.png"
+            alt="AVINYATES INDIA - Inspiring Innovation"
+            fill
+            priority
+            sizes="(max-width: 640px) 192px, 288px"
+            className="object-contain object-left drop-shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+          />
         </div>
 
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-          <a href="#divisions" className="hover:text-cyan-400 transition-colors">Divisions</a>
-          <a href="#about" className="hover:text-cyan-400 transition-colors">About</a>
-          <a href="#ventures" className="hover:text-cyan-400 transition-colors">Ventures</a>
-          <a href="#contact" className="hover:text-cyan-400 transition-colors">Global Offices</a>
+        {/* Desktop Nav Links */}
+        <nav className="hidden md:flex items-center gap-8 lg:gap-12 text-sm font-normal text-neutral-300">
+          <a
+            href="#story"
+            className="hover:text-white transition-colors tracking-wide"
+          >
+            Our Story
+          </a>
+          <a
+            href="#brands"
+            className="hover:text-white transition-colors tracking-wide"
+          >
+            Our Brands
+          </a>
+          <a
+            href="#innovation"
+            className="hover:text-white transition-colors tracking-wide"
+          >
+            Innovation
+          </a>
+          <a
+            href="#contact"
+            className="hover:text-white transition-colors tracking-wide"
+          >
+            Contact
+          </a>
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        {/* Mobile menu indicator or replay option */}
+        {onReplayLoading && (
           <button
             onClick={onReplayLoading}
-            className="px-2.5 sm:px-3.5 py-1.5 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-white/10 text-[11px] sm:text-xs text-slate-300 flex items-center gap-1.5 transition-all shadow-sm hover:border-cyan-400/40 active:scale-95 touch-manipulation"
+            className="md:hidden px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs text-neutral-300 hover:text-white transition-all backdrop-blur-sm"
           >
-            <PlayCircle className="w-3.5 h-3.5 text-cyan-400" />
-            <span className="hidden xs:inline">Replay</span> Intro
+            Replay
           </button>
-          <button className="px-3 sm:px-4 py-1.5 rounded-lg bg-white text-black text-[11px] sm:text-xs font-semibold hover:bg-slate-200 transition-all active:scale-95 touch-manipulation">
-            Contact
-          </button>
-        </div>
+        )}
       </header>
 
-      {/* Hero Body */}
-      <main className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16 md:py-20 flex flex-col items-center text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-neutral-900/90 border border-cyan-500/30 text-[11px] sm:text-xs font-medium text-cyan-300 shadow-md mb-6 sm:mb-8">
-          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-cyan-400 animate-pulse" />
-          <span>Multinational Diversified Conglomerate</span>
-        </div>
-
-        {/* Headline */}
-        <h1
-          className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight max-w-5xl uppercase text-white leading-tight"
-          style={{
-            fontFamily: "'Montserrat', sans-serif",
-            letterSpacing: "0.06em",
-          }}
-        >
-          Inspiring Innovation Across Boundaries
-        </h1>
-
-        {/* Subhead */}
-        <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-xl text-neutral-400 max-w-3xl leading-relaxed px-2">
-          AVINYATES INDIA unites breakthrough technology, industrial leadership, and sustainable infrastructure to power global growth across continents.
-        </p>
-
-        {/* Action Buttons */}
-        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0">
-          <a
-            href="#divisions"
-            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-sm font-semibold text-black transition-all shadow-lg shadow-cyan-500/25 flex items-center justify-center gap-2 active:scale-95 touch-manipulation"
-          >
-            <span>Explore Enterprises</span>
-            <ArrowUpRight className="w-4 h-4" />
-          </a>
-          <button
-            onClick={onReplayLoading}
-            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 border border-white/15 text-sm font-medium text-neutral-200 transition-all flex items-center justify-center gap-2 active:scale-95 touch-manipulation"
-          >
-            <PlayCircle className="w-4 h-4 text-cyan-400" />
-            <span>Replay Loading Intro</span>
-          </button>
-        </div>
-
-        {/* Divisions Cards Grid */}
-        <div id="divisions" className="mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 w-full text-left">
-          {divisions.map((div, i) => (
-            <div
-              key={i}
-              className="p-5 sm:p-6 rounded-2xl bg-neutral-950/80 border border-white/10 hover:border-cyan-500/40 transition-all duration-300 backdrop-blur-sm group hover:-translate-y-1 shadow-xl shadow-black/40"
+      {/* Main Hero Content (Left Aligned matching reference image) */}
+      <main className="relative z-20 w-full px-6 sm:px-10 md:px-16 py-12 md:py-24 flex-1 flex flex-col justify-center">
+        <div className="max-w-2xl lg:max-w-3xl">
+          {/* OUR MISSION with cyan dash accent */}
+          <div className="flex items-center gap-2.5 mb-6 sm:mb-8">
+            <span className="w-5 h-[2px] bg-[#38bdf8] rounded-full shadow-[0_0_8px_#38bdf8]" />
+            <span
+              className="text-[11px] sm:text-xs tracking-[0.28em] text-neutral-300 uppercase font-medium"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <div className="p-2 sm:p-2.5 rounded-xl bg-neutral-900 border border-white/10 group-hover:border-cyan-500/30 transition-colors">
-                  {div.icon}
-                </div>
-                <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-neutral-500 group-hover:text-cyan-400 transition-colors">
-                  {div.tag}
-                </span>
-              </div>
-              <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-cyan-200 transition-colors">
-                {div.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
-                {div.desc}
-              </p>
-            </div>
-          ))}
+              OUR MISSION
+            </span>
+          </div>
+
+          {/* Main Headline */}
+          <h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[58px] text-white font-normal leading-[1.18] tracking-tight"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            To be the planet&apos;s{" "}
+            <span className="text-[#38bdf8] font-normal drop-shadow-[0_0_25px_rgba(56,189,248,0.45)]">
+              most innovative
+            </span>{" "}
+            enterprise by creating futuristic opportunities for mankind.
+          </h1>
+
+          {/* Pill Outline Button */}
+          <div className="mt-8 sm:mt-10">
+            <a
+              href="#explore"
+              className="inline-flex items-center gap-3 px-7 py-3 rounded-full border border-white/30 hover:border-white/80 bg-black/20 hover:bg-black/50 backdrop-blur-md text-xs sm:text-sm text-white font-normal transition-all duration-300 group shadow-lg shadow-black/40 active:scale-95"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              <span>Explore Avinyates</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1 text-sm">
+                →
+              </span>
+            </a>
+          </div>
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] sm:text-xs text-neutral-500 gap-3 text-center sm:text-left">
-        <div>
-          © 2026 AVINYATES INDIA. All Rights Reserved.
+      {/* Minimalist Bottom-Center Scroll Indicator */}
+      <div className="relative z-20 pb-6 flex flex-col items-center justify-center pointer-events-none">
+        <div className="w-[1px] h-7 bg-gradient-to-b from-transparent via-white/30 to-white/70" />
+        <div className="w-6 h-6 mt-1 rounded-full border border-white/25 flex items-center justify-center text-white/70">
+          <ChevronDown className="w-3.5 h-3.5 animate-bounce" />
         </div>
-        <div className="flex items-center gap-4 sm:gap-6">
-          <span className="text-neutral-400">Global Headquarters: India</span>
-          <span>•</span>
-          <span className="text-neutral-400">Multinational Ventures</span>
-        </div>
-      </footer>
+      </div>
     </div>
   );
 }
