@@ -13,7 +13,7 @@ export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
     <div className="relative min-h-[100dvh] w-full bg-black text-white flex flex-col justify-between overflow-hidden select-none">
       {/* 4K Rotating Earth Background Video */}
       <video
-        src="/earth_background.mp4"
+        src="/rotating_earth.mp4"
         autoPlay
         loop
         muted
