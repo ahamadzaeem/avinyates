@@ -47,7 +47,7 @@ export default function AppleLanguageChanger() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center text-center select-none w-full max-w-sm sm:max-w-md md:max-w-xl px-2 sm:px-4 mt-2 sm:mt-3 md:mt-4">
+    <div className="flex flex-col items-center justify-center text-center select-none w-full max-w-sm sm:max-w-md md:max-w-xl px-2 sm:px-4 -mt-8 xs:-mt-10 sm:-mt-14 md:-mt-18 lg:-mt-22">
       {/* Dynamic Word Stage with Mobile-Friendly Overlapping Crossfade */}
       <div className="relative w-full h-8 xs:h-9 sm:h-11 md:h-14 flex items-center justify-center overflow-visible">
         {/* Previous Word (fading out smoothly) */}
