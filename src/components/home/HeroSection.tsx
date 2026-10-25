@@ -25,36 +25,36 @@ export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
       {/* Small, subtle dark overlay to keep video clear while elevating text contrast */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-black/10 pointer-events-none z-10" />
 
-      {/* Navigation Bar - Exactly Matching Reference Image */}
-      <header className="relative z-30 w-full px-5 sm:px-8 md:px-12 lg:px-16 xl:px-[72px] pt-6 sm:pt-7 md:pt-9 lg:pt-10 flex items-center justify-between">
-        {/* Brand Logo Lockup: Chrome Emblem + Montserrat Typography */}
+      {/* Navigation Bar - Prominent & Sized Exactly Like Reference */}
+      <header className="relative z-30 w-full px-6 sm:px-10 md:px-14 lg:px-18 xl:px-20 pt-7 sm:pt-8 md:pt-10 lg:pt-12 flex items-center justify-between">
+        {/* Brand Logo Lockup: Chrome Emblem + Scaled Montserrat Typography */}
         <a
           href="#"
-          className="flex items-center gap-2.5 sm:gap-3.5 md:gap-4 select-none group transition-transform duration-300 hover:scale-[1.01]"
+          className="flex items-center gap-3 sm:gap-4 md:gap-5 select-none group transition-transform duration-300 hover:scale-[1.02]"
           aria-label="AVINYATES INDIA"
         >
           {/* 3D Chrome Infinity Emblem (A + Infinity + i) */}
-          <div className="relative w-11 sm:w-13 md:w-16 lg:w-[72px] h-6 sm:h-7 md:h-8 lg:h-[36px] shrink-0">
+          <div className="relative w-14 sm:w-18 md:w-24 lg:w-28 xl:w-32 h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 shrink-0">
             <Image
               src="/chrome_emblem.png"
               alt="Avinyates Emblem"
               fill
               priority
-              sizes="(max-width: 640px) 44px, (max-width: 1024px) 64px, 72px"
-              className="object-contain object-left drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]"
+              sizes="(max-width: 640px) 72px, (max-width: 1024px) 112px, 128px"
+              className="object-contain object-left drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]"
             />
           </div>
 
           {/* Typography Lockup */}
           <div className="flex flex-col items-center">
             <span
-              className="text-white text-xs sm:text-sm md:text-base lg:text-[17.5px] xl:text-[18.5px] font-semibold tracking-[0.14em] uppercase leading-none whitespace-nowrap drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]"
+              className="text-white text-sm sm:text-base md:text-xl lg:text-[23px] xl:text-[26px] font-semibold tracking-[0.16em] uppercase leading-none whitespace-nowrap drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               AVINYATES INDIA
             </span>
             <span
-              className="text-neutral-400 text-[7px] sm:text-[8px] md:text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-normal tracking-[0.24em] leading-none mt-1 sm:mt-1.5 text-center whitespace-nowrap drop-shadow-[0_1px_6px_rgba(0,0,0,0.95)]"
+              className="text-neutral-400 text-[8.5px] sm:text-[10px] md:text-xs lg:text-[13px] xl:text-[14.5px] font-normal tracking-[0.26em] leading-none mt-1 sm:mt-1.5 md:mt-2 text-center whitespace-nowrap drop-shadow-[0_1px_8px_rgba(0,0,0,0.95)]"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Inspiring Innovation
@@ -62,32 +62,32 @@ export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
           </div>
         </a>
 
-        {/* Nav Links: Exactly Our Story, Our Brands, Innovation, Contact */}
+        {/* Nav Links: Exactly Our Story, Our Brands, Innovation, Contact - Bigger & Prominent */}
         <nav
-          className="flex items-center gap-3.5 sm:gap-6 md:gap-9 lg:gap-13 xl:gap-16 text-[11px] sm:text-xs md:text-sm lg:text-[14.5px] font-normal drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]"
+          className="flex items-center gap-4 sm:gap-7 md:gap-10 lg:gap-14 xl:gap-18 text-xs sm:text-sm md:text-[16px] lg:text-[18px] xl:text-[19px] font-normal drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
           style={{ fontFamily: "'Montserrat', sans-serif" }}
         >
           <a
             href="#story"
-            className="text-neutral-300 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
+            className="text-neutral-200 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
           >
             Our Story
           </a>
           <a
             href="#brands"
-            className="text-neutral-300 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
+            className="text-neutral-200 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
           >
             Our Brands
           </a>
           <a
             href="#innovation"
-            className="text-neutral-300 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
+            className="text-neutral-200 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
           >
             Innovation
           </a>
           <a
             href="#contact"
-            className="text-neutral-300 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
+            className="text-neutral-200 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
           >
             Contact
           </a>
