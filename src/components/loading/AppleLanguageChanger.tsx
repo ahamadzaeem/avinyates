@@ -81,14 +81,7 @@ export default function AppleLanguageChanger({ onAllLanguagesComplete }: AppleLa
   };
 
   return (
-    <div className="flex flex-col items-center justify-center text-center select-none w-full max-w-sm sm:max-w-md md:max-w-2xl px-4 mt-3 sm:mt-5 md:mt-6 z-20">
-      {/* Sleek Language Indicator Pill */}
-      <div className="mb-3 sm:mb-4">
-        <span className="text-[11px] sm:text-xs font-medium text-cyan-400 tracking-[0.2em] uppercase px-3.5 py-1 rounded-full bg-cyan-950/40 border border-cyan-500/30 backdrop-blur-md shadow-[0_0_15px_rgba(6,182,212,0.15)] transition-all duration-300">
-          {current.nativeName} • {current.name}
-        </span>
-      </div>
-
+    <div className="flex flex-col items-center justify-center text-center select-none w-full max-w-sm sm:max-w-md md:max-w-2xl px-4 -mt-2 sm:-mt-4 md:-mt-6 z-20">
       {/* Dynamic Word Stage with Overlapping Crossfade */}
       <div className="relative w-full h-16 xs:h-18 sm:h-20 md:h-24 flex items-center justify-center overflow-visible">
         {/* Previous Word (fading out smoothly) */}
