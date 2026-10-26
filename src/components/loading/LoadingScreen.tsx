@@ -22,12 +22,12 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       });
     }
 
-    // Automatically trigger shutter open after 6 seconds
-    const autoTimer = setTimeout(() => {
+    // Fallback safety timer (12 seconds) in case window loses focus
+    const fallbackTimer = setTimeout(() => {
       handleOpenShutter();
-    }, 6000);
+    }, 12000);
 
-    return () => clearTimeout(autoTimer);
+    return () => clearTimeout(fallbackTimer);
   }, []);
 
   const handleOpenShutter = () => {
@@ -62,9 +62,9 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           isExiting ? "opacity-0 scale-95 pointer-events-none" : "opacity-100 scale-100"
         }`}
       >
-        <div className="flex flex-col items-center justify-center w-full max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-3xl -mt-6 sm:-mt-10">
+        <div className="flex flex-col items-center justify-center w-full max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-3xl">
           {/* 250% Enlarged 3D Chrome Infinity Video */}
-          <div className="relative w-full h-[200px] xs:h-[240px] sm:h-[300px] md:h-[360px] lg:h-[400px] overflow-hidden flex items-center justify-center">
+          <div className="relative w-full h-[180px] xs:h-[220px] sm:h-[280px] md:h-[320px] lg:h-[360px] overflow-hidden flex items-center justify-center">
             <video
               ref={videoRef}
               src="/loading_animation.mp4"
@@ -79,8 +79,8 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
             />
           </div>
 
-          {/* Multilingual Words - Positioned cleanly beneath the 250% enlarged logo */}
-          <AppleLanguageChanger />
+          {/* Multilingual Words - Positioned clearly beneath the enlarged logo */}
+          <AppleLanguageChanger onAllLanguagesComplete={handleOpenShutter} />
         </div>
       </div>
 
