@@ -8,7 +8,7 @@ export default function Home() {
   const [showLoading, setShowLoading] = useState(true);
 
   return (
-    <main className="relative min-h-screen bg-black overflow-hidden">
+    <main className={`relative min-h-screen bg-black ${showLoading ? "h-screen overflow-hidden" : "overflow-x-hidden"}`}>
       {/* Hero section is always mounted beneath so it is revealed when shutters open */}
       <HeroSection onReplayLoading={() => setShowLoading(true)} />
 
