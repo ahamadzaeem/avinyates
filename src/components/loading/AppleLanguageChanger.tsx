@@ -81,7 +81,7 @@ export default function AppleLanguageChanger({ onAllLanguagesComplete }: AppleLa
   };
 
   return (
-    <div className="flex flex-col items-center justify-center text-center select-none w-full max-w-sm sm:max-w-md md:max-w-2xl px-4 -mt-2 sm:-mt-4 md:-mt-6 z-20">
+    <div className="flex flex-col items-center justify-center text-center select-none w-full max-w-sm sm:max-w-md md:max-w-2xl px-4 -mt-6 sm:-mt-9 md:-mt-12 lg:-mt-14 z-20">
       {/* Dynamic Word Stage with Overlapping Crossfade */}
       <div className="relative w-full h-16 xs:h-18 sm:h-20 md:h-24 flex items-center justify-center overflow-visible">
         {/* Previous Word (fading out smoothly) */}
