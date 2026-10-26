@@ -10,23 +10,24 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
   return (
-    <div className="relative min-h-[100dvh] w-full bg-black text-white flex flex-col justify-between overflow-hidden select-none">
-      {/* 4K Rotating Earth Background Video (Normal Speed) */}
-      <video
-        src="/rotating_earth.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        webkit-playsinline="true"
-        className="absolute inset-0 w-full h-full object-cover object-right md:object-center pointer-events-none z-0"
-      />
+    <div className="relative w-full bg-black text-white select-none">
+      {/* 4K Rotating Earth Background Video - Permanently Fixated in Background */}
+      <div className="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+        <video
+          src="/rotating_earth.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          webkit-playsinline="true"
+          className="w-full h-full object-cover object-right md:object-center"
+        />
+        {/* Subtle dark overlay to keep video clear while elevating text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-black/10" />
+      </div>
 
-      {/* Small, subtle dark overlay to keep video clear while elevating text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-black/10 pointer-events-none z-10" />
-
-      {/* Navigation Bar - Prominent & Sized Exactly Like Reference */}
-      <header className="relative z-30 w-full px-6 sm:px-10 md:px-14 lg:px-18 xl:px-20 pt-7 sm:pt-8 md:pt-10 lg:pt-12 flex items-center justify-between">
+      {/* Global Fixed Navigation Bar */}
+      <header className="fixed top-0 left-0 right-0 z-40 w-full px-6 sm:px-10 md:px-14 lg:px-18 xl:px-20 pt-6 sm:pt-7 md:pt-9 lg:pt-10 flex items-center justify-between pointer-events-auto backdrop-blur-[2px] transition-all">
         {/* Brand Logo Lockup: Chrome Emblem + Scaled Montserrat Typography */}
         <a
           href="#"
@@ -62,31 +63,31 @@ export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
           </div>
         </a>
 
-        {/* Nav Links: Exactly Our Story, Our Brands, Innovation, Contact - Bigger & Prominent */}
+        {/* Nav Links: Exactly Our Story, Our Brands, Innovation, Contact */}
         <nav
           className="flex items-center gap-4 sm:gap-7 md:gap-10 lg:gap-14 xl:gap-18 text-xs sm:text-sm md:text-[16px] lg:text-[18px] xl:text-[19px] font-normal drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
           style={{ fontFamily: "'Montserrat', sans-serif" }}
         >
           <a
-            href="#story"
+            href="#mission"
             className="text-neutral-200 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
           >
             Our Story
           </a>
           <a
-            href="#brands"
+            href="#mission"
             className="text-neutral-200 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
           >
             Our Brands
           </a>
           <a
-            href="#innovation"
+            href="#mission"
             className="text-neutral-200 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
           >
             Innovation
           </a>
           <a
-            href="#contact"
+            href="#mission"
             className="text-neutral-200 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
           >
             Contact
@@ -94,9 +95,9 @@ export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
         </nav>
       </header>
 
-      {/* Main Hero Content (Section 1: Three-Word Hook) */}
-      <main className="relative z-20 w-full px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 py-10 sm:py-14 md:py-20 flex-1 flex flex-col justify-center">
-        <div className="max-w-2xl lg:max-w-3xl drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
+      {/* SECTION 1: Three-Word Hook (Inspire, Innovate, Ignite) */}
+      <section className="relative z-20 min-h-[100dvh] w-full px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-8 flex flex-col justify-between">
+        <div className="my-auto max-w-2xl lg:max-w-3xl drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
           {/* Eyebrow with cyan dash accent */}
           <div className="flex items-center gap-2.5 mb-5 sm:mb-7">
             <span className="w-5 h-[2px] bg-[#38bdf8] rounded-full shadow-[0_0_10px_#38bdf8]" />
@@ -144,100 +145,72 @@ export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
             </a>
           </div>
         </div>
-      </main>
 
-      {/* Clickable Bottom-Center Scroll Indicator */}
-      <a
-        href="#mission"
-        className="relative z-20 pb-7 flex flex-col items-center justify-center group cursor-pointer transition-opacity hover:opacity-100 opacity-80"
-        aria-label="Scroll to Mission Statement"
-      >
-        <span className="text-[10px] tracking-[0.25em] text-neutral-400 uppercase mb-2 font-medium group-hover:text-cyan-400 transition-colors">
-          SCROLL
-        </span>
-        <div className="w-[1px] h-6 bg-gradient-to-b from-transparent via-white/40 to-white/80 group-hover:via-cyan-400 group-hover:to-cyan-400 transition-colors" />
-        <div className="w-6 h-6 mt-1 rounded-full border border-white/30 group-hover:border-cyan-400/60 flex items-center justify-center text-white/80 group-hover:text-cyan-400 shadow-lg transition-colors">
-          <ChevronDown className="w-3.5 h-3.5 animate-bounce" />
-        </div>
-      </a>
+        {/* Scroll Indicator linking to Section 2 */}
+        <a
+          href="#mission"
+          className="pb-4 flex flex-col items-center justify-center group cursor-pointer transition-opacity hover:opacity-100 opacity-80"
+          aria-label="Scroll to Mission Statement"
+        >
+          <span className="text-[10px] tracking-[0.25em] text-neutral-400 uppercase mb-2 font-medium group-hover:text-cyan-400 transition-colors">
+            SCROLL
+          </span>
+          <div className="w-[1px] h-6 bg-gradient-to-b from-transparent via-white/40 to-white/80 group-hover:via-cyan-400 group-hover:to-cyan-400 transition-colors" />
+          <div className="w-6 h-6 mt-1 rounded-full border border-white/30 group-hover:border-cyan-400/60 flex items-center justify-center text-white/80 group-hover:text-cyan-400 shadow-lg transition-colors">
+            <ChevronDown className="w-3.5 h-3.5 animate-bounce" />
+          </div>
+        </a>
+      </section>
 
-      {/* SECTION 2: Mission Statement (Second Session on the same page) */}
+      {/* SECTION 2: Our Mission - Exactly Matching Template Image (No Boxes) */}
       <section
         id="mission"
-        className="relative z-20 w-full min-h-[92vh] py-24 sm:py-32 md:py-36 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 bg-gradient-to-b from-black via-[#040810] to-black border-t border-white/10 flex flex-col justify-between"
+        className="relative z-20 min-h-[100dvh] w-full px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-8 flex flex-col justify-between"
       >
-        {/* Subtle Ambient Radial Glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-950/20 via-transparent to-transparent pointer-events-none" />
-
-        <div className="relative max-w-5xl mx-auto w-full my-auto">
+        <div className="my-auto max-w-2xl lg:max-w-3xl drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
           {/* OUR MISSION with cyan dash accent */}
-          <div className="flex items-center gap-3 mb-6 sm:mb-8">
-            <span className="w-6 h-[2px] bg-[#38bdf8] rounded-full shadow-[0_0_12px_#38bdf8]" />
+          <div className="flex items-center gap-2.5 mb-6 sm:mb-8">
+            <span className="w-5 h-[2px] bg-[#38bdf8] rounded-full shadow-[0_0_10px_#38bdf8]" />
             <span
-              className="text-xs sm:text-sm tracking-[0.3em] text-[#38bdf8] uppercase font-semibold"
+              className="text-[11px] sm:text-xs tracking-[0.28em] text-neutral-200 uppercase font-medium"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               OUR MISSION
             </span>
           </div>
 
-          {/* Refined Smaller Font Headline as requested */}
+          {/* Mission Headline exactly like template */}
           <h2
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] text-white font-light leading-[1.4] tracking-tight max-w-4xl"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[58px] text-white font-normal leading-[1.18] tracking-tight"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             To be the planet&apos;s{" "}
-            <span className="text-[#38bdf8] font-normal drop-shadow-[0_0_20px_rgba(56,189,248,0.45)]">
+            <span className="text-[#38bdf8] font-normal drop-shadow-[0_0_25px_rgba(56,189,248,0.6)]">
               most innovative
             </span>{" "}
             enterprise by creating futuristic opportunities for mankind.
           </h2>
 
-          {/* 3 Strategic Pillars of the Mission */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-14 sm:mt-18 pt-10 border-t border-white/10">
-            <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-sm hover:border-cyan-500/30 transition-all duration-300 group">
-              <div className="text-[#38bdf8] text-xs font-semibold tracking-[0.2em] uppercase mb-2">
-                01 / INSPIRE
-              </div>
-              <h3 className="text-lg text-white font-medium mb-2">Visionary Purpose</h3>
-              <p className="text-sm text-neutral-400 font-light leading-relaxed">
-                Igniting transformative ideas that push the boundaries of human potential and global enterprise.
-              </p>
-            </div>
-
-            <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-sm hover:border-cyan-500/30 transition-all duration-300 group">
-              <div className="text-[#38bdf8] text-xs font-semibold tracking-[0.2em] uppercase mb-2">
-                02 / INNOVATE
-              </div>
-              <h3 className="text-lg text-white font-medium mb-2">Breakthrough Horizons</h3>
-              <p className="text-sm text-neutral-400 font-light leading-relaxed">
-                Engineering advanced technological solutions and ventures tailored for future generations.
-              </p>
-            </div>
-
-            <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-sm hover:border-cyan-500/30 transition-all duration-300 group">
-              <div className="text-[#38bdf8] text-xs font-semibold tracking-[0.2em] uppercase mb-2">
-                03 / IGNITE
-              </div>
-              <h3 className="text-lg text-white font-medium mb-2">Enduring Impact</h3>
-              <p className="text-sm text-neutral-400 font-light leading-relaxed">
-                Executing strategic global initiatives that yield sustainable prosperity and human empowerment.
-              </p>
-            </div>
+          {/* Pill Outline Button */}
+          <div className="mt-8 sm:mt-10">
+            <a
+              href="#"
+              className="inline-flex items-center gap-3 px-7 py-3 rounded-full border border-white/40 hover:border-white bg-black/30 hover:bg-black/60 backdrop-blur-md text-xs sm:text-sm text-white font-normal transition-all duration-300 group shadow-xl shadow-black/70 active:scale-95"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              <span>Explore Avinyates</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1 text-sm">
+                →
+              </span>
+            </a>
           </div>
         </div>
 
-        {/* Section Footer */}
-        <div className="relative w-full max-w-5xl mx-auto mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 gap-4">
-          <div>
-            © {new Date().getFullYear()} AVINYATES INDIA. All Rights Reserved.
-          </div>
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-neutral-400 hover:text-white transition-colors">
-              Back to Top ↑
-            </a>
-            <span className="text-neutral-600">•</span>
-            <span className="text-neutral-400">Inspiring Innovation</span>
+        {/* Minimalist Bottom-Center Scroll Indicator Matching Reference Image */}
+        <div className="pb-4 flex flex-col items-center justify-center pointer-events-none">
+          <div className="w-[1px] h-7 bg-gradient-to-b from-transparent via-white/40 to-white/80" />
+          <div className="w-6 h-6 mt-1 rounded-full border border-white/30 flex items-center justify-center text-white/80 shadow-lg">
+            <ChevronDown className="w-3.5 h-3.5 animate-bounce" />
           </div>
         </div>
       </section>
