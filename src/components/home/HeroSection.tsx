@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
+import Navbar from "../navigation/Navbar";
 
 interface HeroSectionProps {
   onReplayLoading?: () => void;
@@ -26,74 +27,8 @@ export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-black/10" />
       </div>
 
-      {/* Global Fixed Navigation Bar */}
-      <header className="fixed top-0 left-0 right-0 z-40 w-full px-6 sm:px-10 md:px-14 lg:px-18 xl:px-20 pt-6 sm:pt-7 md:pt-9 lg:pt-10 flex items-center justify-between pointer-events-auto backdrop-blur-[2px] transition-all">
-        {/* Brand Logo Lockup: Chrome Emblem + Scaled Montserrat Typography */}
-        <a
-          href="#"
-          className="flex items-center gap-3 sm:gap-4 md:gap-5 select-none group transition-transform duration-300 hover:scale-[1.02]"
-          aria-label="AVINYATES INDIA"
-        >
-          {/* 3D Chrome Infinity Emblem (A + Infinity + i) */}
-          <div className="relative w-14 sm:w-18 md:w-24 lg:w-28 xl:w-32 h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 shrink-0">
-            <Image
-              src="/chrome_emblem.png"
-              alt="Avinyates Emblem"
-              fill
-              priority
-              sizes="(max-width: 640px) 72px, (max-width: 1024px) 112px, 128px"
-              className="object-contain object-left drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]"
-            />
-          </div>
-
-          {/* Typography Lockup */}
-          <div className="flex flex-col items-center">
-            <span
-              className="text-white text-sm sm:text-base md:text-xl lg:text-[23px] xl:text-[26px] font-semibold tracking-[0.16em] uppercase leading-none whitespace-nowrap drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
-            >
-              AVINYATES INDIA
-            </span>
-            <span
-              className="text-neutral-400 text-[8.5px] sm:text-[10px] md:text-xs lg:text-[13px] xl:text-[14.5px] font-normal tracking-[0.26em] leading-none mt-1 sm:mt-1.5 md:mt-2 text-center whitespace-nowrap drop-shadow-[0_1px_8px_rgba(0,0,0,0.95)]"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
-            >
-              Inspiring Innovation
-            </span>
-          </div>
-        </a>
-
-        {/* Nav Links: Exactly Our Story, Our Brands, Innovation, Contact */}
-        <nav
-          className="flex items-center gap-4 sm:gap-7 md:gap-10 lg:gap-14 xl:gap-18 text-xs sm:text-sm md:text-[16px] lg:text-[18px] xl:text-[19px] font-normal drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
-        >
-          <a
-            href="#mission"
-            className="text-neutral-200 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
-          >
-            Our Story
-          </a>
-          <a
-            href="#mission"
-            className="text-neutral-200 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
-          >
-            Our Brands
-          </a>
-          <a
-            href="#mission"
-            className="text-neutral-200 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
-          >
-            Innovation
-          </a>
-          <a
-            href="#mission"
-            className="text-neutral-200 hover:text-white transition-colors duration-200 tracking-wide whitespace-nowrap"
-          >
-            Contact
-          </a>
-        </nav>
-      </header>
+      {/* Global Navigation Bar */}
+      <Navbar currentPath="/" />
 
       {/* SECTION 1: Three-Word Hook (Inspire, Innovate, Ignite) */}
       <section className="relative z-20 min-h-[100dvh] w-full px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-8 flex flex-col justify-between">
