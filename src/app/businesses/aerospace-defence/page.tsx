@@ -42,30 +42,36 @@ export default function AerospaceDefencePage() {
             Engineering autonomous aeronautical platforms, next-generation avionics, and resilient defense systems engineered for national security and sovereign space exploration.
           </p>
 
-          {/* Pillars */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-14 pt-10 border-t border-white/10">
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
-              <div className="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4">
-                <Plane className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg text-white font-medium mb-1">Advanced Propulsion</h3>
-              <p className="text-xs sm:text-sm text-neutral-400 font-light">High-efficiency hybrid aerospace propulsion and atmospheric dynamics.</p>
+          {/* Pillars - Frameless Open Layout (Zero Boxes) */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 mt-16 pt-12 border-t border-white/10">
+            <div className="flex flex-col">
+              <span className="text-xs font-mono tracking-[0.25em] text-[#38bdf8] uppercase mb-3">
+                01 / PROPULSION
+              </span>
+              <h3 className="text-2xl text-white font-light tracking-tight mb-2">Advanced Propulsion</h3>
+              <p className="text-sm text-neutral-400 font-light leading-relaxed">
+                High-efficiency hybrid aerospace propulsion, hypersonic aerothermodynamics, and atmospheric dynamics.
+              </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
-              <div className="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4">
-                <Shield className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg text-white font-medium mb-1">Defense Shield Systems</h3>
-              <p className="text-xs sm:text-sm text-neutral-400 font-light">Tactical perimeter surveillance, anti-drone technologies, and electronic defense.</p>
+            <div className="flex flex-col">
+              <span className="text-xs font-mono tracking-[0.25em] text-[#38bdf8] uppercase mb-3">
+                02 / DEFENCE
+              </span>
+              <h3 className="text-2xl text-white font-light tracking-tight mb-2">Defense Shield Systems</h3>
+              <p className="text-sm text-neutral-400 font-light leading-relaxed">
+                Tactical perimeter surveillance, autonomous counter-drone electronic defense, and sovereign protection.
+              </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
-              <div className="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4">
-                <Satellite className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg text-white font-medium mb-1">Satellite Ecosystems</h3>
-              <p className="text-xs sm:text-sm text-neutral-400 font-light">Low-earth orbit constellations for secure intelligence and communication.</p>
+            <div className="flex flex-col">
+              <span className="text-xs font-mono tracking-[0.25em] text-[#38bdf8] uppercase mb-3">
+                03 / ORBIT
+              </span>
+              <h3 className="text-2xl text-white font-light tracking-tight mb-2">Satellite Ecosystems</h3>
+              <p className="text-sm text-neutral-400 font-light leading-relaxed">
+                Low-earth orbit constellations for secure intelligence, telecommunications, and sovereign space monitoring.
+              </p>
             </div>
           </div>
         </div>

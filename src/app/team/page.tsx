@@ -77,44 +77,35 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Leadership & Divisions Showcase */}
-      <section className="relative z-10 py-16 sm:py-24 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 bg-gradient-to-b from-black via-[#060a12] to-black border-t border-white/10">
+      {/* Leadership & Divisions Showcase - Zero Boxes */}
+      <section className="relative z-10 py-16 sm:py-24 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 border-t border-white/10">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
             {leadership.map((item, index) => {
-              const Icon = item.icon;
               return (
                 <div
                   key={index}
-                  className="p-8 sm:p-10 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-cyan-500/40 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group"
+                  className="flex flex-col justify-between pt-8 border-t border-white/10 group"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-2xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      <span className="text-[11px] font-mono tracking-widest text-cyan-400 uppercase px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-500/20">
-                        {item.tag}
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-xs font-mono tracking-[0.25em] text-[#38bdf8] uppercase">
+                        0{index + 1} / {item.tag}
                       </span>
                     </div>
 
                     <h3
-                      className="text-2xl text-white font-semibold tracking-wide mb-1"
+                      className="text-2xl sm:text-3xl text-white font-light tracking-wide mb-2 group-hover:text-cyan-400 transition-colors"
                       style={{ fontFamily: "'Montserrat', sans-serif" }}
                     >
                       {item.name}
                     </h3>
-                    <p className="text-xs sm:text-sm text-cyan-400/90 font-medium mb-4">
+                    <p className="text-sm text-cyan-400/90 font-light mb-3">
                       {item.role}
                     </p>
                     <p className="text-sm text-neutral-400 font-light leading-relaxed">
                       {item.desc}
                     </p>
-                  </div>
-
-                  <div className="mt-8 pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-neutral-500">
-                    <Globe className="w-4 h-4 text-neutral-400" />
-                    <span>Avinyates India Global Operations</span>
                   </div>
                 </div>
               );

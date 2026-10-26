@@ -44,35 +44,35 @@ export default function EnergyPage() {
             Powering the future through breakthrough renewable generation, high-density solid-state storage, and intelligent decentralized grid networks.
           </p>
 
-          {/* Pillars */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-14 pt-10 border-t border-white/10">
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md hover:border-cyan-500/40 transition-all duration-300">
-              <div className="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4">
-                <Sun className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg text-white font-medium mb-1">Photovoltaic Innovation</h3>
-              <p className="text-xs sm:text-sm text-neutral-400 font-light leading-relaxed">
-                Next-generation perovskite solar architecture delivering quantum-level conversion efficiency.
+          {/* Pillars - Frameless Open Layout (Zero Boxes) */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 mt-16 pt-12 border-t border-white/10">
+            <div className="flex flex-col">
+              <span className="text-xs font-mono tracking-[0.25em] text-[#38bdf8] uppercase mb-3">
+                01 / SOLAR
+              </span>
+              <h3 className="text-2xl text-white font-light tracking-tight mb-2">Photovoltaic Innovation</h3>
+              <p className="text-sm text-neutral-400 font-light leading-relaxed">
+                Next-generation perovskite solar architecture delivering quantum-level conversion efficiency and zero carbon footprints.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md hover:border-cyan-500/40 transition-all duration-300">
-              <div className="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4">
-                <BatteryCharging className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg text-white font-medium mb-1">Solid-State Storage</h3>
-              <p className="text-xs sm:text-sm text-neutral-400 font-light leading-relaxed">
-                Industrial-scale grid battery reserves built on non-toxic, ultra-durable solid electrolyte chemistry.
+            <div className="flex flex-col">
+              <span className="text-xs font-mono tracking-[0.25em] text-[#38bdf8] uppercase mb-3">
+                02 / STORAGE
+              </span>
+              <h3 className="text-2xl text-white font-light tracking-tight mb-2">Solid-State Storage</h3>
+              <p className="text-sm text-neutral-400 font-light leading-relaxed">
+                Industrial-scale grid battery reserves built on non-toxic, ultra-durable solid electrolyte chemistry and high cycle density.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md hover:border-cyan-500/40 transition-all duration-300">
-              <div className="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4">
-                <Zap className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg text-white font-medium mb-1">Smart Grid Systems</h3>
-              <p className="text-xs sm:text-sm text-neutral-400 font-light leading-relaxed">
-                AI-driven decentralized power distribution optimizing real-time demand balance with zero waste.
+            <div className="flex flex-col">
+              <span className="text-xs font-mono tracking-[0.25em] text-[#38bdf8] uppercase mb-3">
+                03 / DISTRIBUTION
+              </span>
+              <h3 className="text-2xl text-white font-light tracking-tight mb-2">Smart Grid Systems</h3>
+              <p className="text-sm text-neutral-400 font-light leading-relaxed">
+                AI-driven decentralized power distribution optimizing real-time demand balance with zero waste and resilient fault isolation.
               </p>
             </div>
           </div>

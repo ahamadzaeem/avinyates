@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/navigation/Navbar";
-import { ShieldCheck, Leaf, Sparkles, ArrowRight, HeartHandshake } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function FMCGPage() {
   return (
@@ -15,8 +15,7 @@ export default function FMCGPage() {
       {/* Hero Section: Food Revolution */}
       <section className="relative min-h-[90vh] pt-32 sm:pt-40 md:pt-48 pb-20 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 flex flex-col justify-center overflow-hidden">
         {/* Subtle Ambient Glow */}
-        <div className="absolute top-1/4 -left-40 w-96 h-96 bg-cyan-600/15 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute top-1/3 -right-40 w-96 h-96 bg-emerald-600/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/4 -left-40 w-96 h-96 bg-cyan-600/10 rounded-full blur-[160px] pointer-events-none" />
 
         <div className="relative max-w-5xl mx-auto w-full z-10">
           {/* Eyebrow */}
@@ -49,55 +48,64 @@ export default function FMCGPage() {
             Re-engineering the global nutritional paradigm through uncompromised purity, advanced clean-label preservation, and whole-body vitality.
           </p>
 
-          {/* The 3 Core Pillars (Hero Banner) */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-12 sm:mt-16 pt-8 border-t border-white/10">
+          {/* The 3 Core Pillars - Clean, Open Editorial Layout (Zero Boxes) */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 mt-16 pt-12 border-t border-white/10">
             {/* Zero Preservatives */}
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md hover:border-cyan-500/40 transition-all duration-300 group">
-              <div className="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <div className="text-xl sm:text-2xl text-white font-semibold tracking-tight">
+            <div className="flex flex-col">
+              <span className="text-xs font-mono tracking-[0.25em] text-[#38bdf8] uppercase mb-3">
+                01 / PURITY
+              </span>
+              <h2
+                className="text-2xl sm:text-3xl text-white font-light tracking-tight"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
                 Zero Preservatives
-              </div>
-              <p className="text-xs sm:text-sm text-neutral-400 font-light mt-2 leading-relaxed">
-                Clean aseptic technology and sterile freshness preservation without chemical stabilizers or shelf-life extenders.
+              </h2>
+              <p className="text-sm text-neutral-400 font-light mt-3 leading-relaxed">
+                Clean aseptic technology and sterile freshness preservation without chemical stabilizers, nitrates, or artificial shelf-life extenders.
               </p>
             </div>
 
             {/* Zero Chemicals */}
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md hover:border-cyan-500/40 transition-all duration-300 group">
-              <div className="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
-                <Leaf className="w-5 h-5" />
-              </div>
-              <div className="text-xl sm:text-2xl text-white font-semibold tracking-tight">
+            <div className="flex flex-col">
+              <span className="text-xs font-mono tracking-[0.25em] text-[#38bdf8] uppercase mb-3">
+                02 / NATURE
+              </span>
+              <h2
+                className="text-2xl sm:text-3xl text-white font-light tracking-tight"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
                 Zero Chemicals
-              </div>
-              <p className="text-xs sm:text-sm text-neutral-400 font-light mt-2 leading-relaxed">
-                100% natural, farm-origin ingredients strictly devoid of synthetic additives, dyes, petroleum derivatives, or fillers.
+              </h2>
+              <p className="text-sm text-neutral-400 font-light mt-3 leading-relaxed">
+                100% natural, farm-origin ingredients strictly devoid of synthetic additives, toxic pesticides, artificial dyes, or petroleum fillers.
               </p>
             </div>
 
             {/* Zero Added Sugar */}
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md hover:border-cyan-500/40 transition-all duration-300 group">
-              <div className="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
-                <Sparkles className="w-5 h-5" />
-              </div>
-              <div className="text-xl sm:text-2xl text-white font-semibold tracking-tight">
+            <div className="flex flex-col">
+              <span className="text-xs font-mono tracking-[0.25em] text-[#38bdf8] uppercase mb-3">
+                03 / HEALTH
+              </span>
+              <h2
+                className="text-2xl sm:text-3xl text-white font-light tracking-tight"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
                 Zero Added Sugar
-              </div>
-              <p className="text-xs sm:text-sm text-neutral-400 font-light mt-2 leading-relaxed">
-                Naturally delicious nourishment relying solely on real fruit and botanical sweetness—never sucrose or artificial sweeteners.
+              </h2>
+              <p className="text-sm text-neutral-400 font-light mt-3 leading-relaxed">
+                Naturally delicious nourishment relying solely on raw botanical sweetness and whole fruit nectar—never sucrose, syrups, or artificial substitutes.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section: OUR BRANDS */}
-      <section className="relative z-10 py-20 sm:py-28 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 bg-gradient-to-b from-black via-[#060a12] to-black border-t border-white/10">
+      {/* Section: OUR BRANDS - Boxless Editorial Presentation */}
+      <section className="relative z-10 py-24 sm:py-32 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 border-t border-white/10">
         <div className="max-w-6xl mx-auto w-full">
           {/* Section Header */}
-          <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
+          <div className="max-w-2xl mb-20 sm:mb-24">
             <span
               className="text-xs sm:text-sm tracking-[0.32em] text-[#38bdf8] uppercase font-semibold block mb-3"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -105,136 +113,122 @@ export default function FMCGPage() {
               PORTFOLIO EXCELLENCE
             </span>
             <h2
-              className="text-3xl sm:text-4xl md:text-5xl text-white font-light tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl text-white font-light tracking-tight"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Our Brands
             </h2>
-            <p className="text-sm sm:text-base text-neutral-400 font-light mt-4">
+            <p className="text-base text-neutral-400 font-light mt-4 leading-relaxed">
               Pioneering consumer brands built on uncompromising biological integrity and taste perfection.
             </p>
           </div>
 
-          {/* Brands Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12">
+          {/* Brands Showcase - Open, Frameless, Luxury Magazine Layout */}
+          <div className="flex flex-col gap-28 sm:gap-36">
             {/* BRAND 1: GULPIT */}
-            <div className="group rounded-3xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/10 hover:border-cyan-500/40 overflow-hidden transition-all duration-500 flex flex-col justify-between shadow-2xl">
-              {/* Product Visual Showcase */}
-              <div className="relative w-full aspect-square sm:aspect-[4/3] overflow-hidden bg-neutral-950 flex items-center justify-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+              {/* Product Visual */}
+              <div className="lg:col-span-6 relative aspect-square sm:aspect-[4/3] w-full overflow-hidden">
                 <Image
                   src="/brands/gulpit.jpg"
-                  alt="Gulpit Healthy Drink"
+                  alt="Gulpit Healthy Cold-Pressed Beverage"
                   fill
                   priority
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-center grayscale-[15%] hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
-                <div className="absolute top-4 left-4 sm:top-6 sm:left-6 px-3.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[11px] font-mono tracking-widest text-cyan-400 uppercase">
-                  BEVERAGES
-                </div>
               </div>
 
-              {/* Product Info */}
-              <div className="p-8 sm:p-10 flex flex-col justify-between flex-1">
-                <div>
-                  <div className="flex items-baseline justify-between mb-2">
-                    <h3
-                      className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-wide uppercase"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                    >
-                      Gulpit
-                    </h3>
-                    <span className="text-xs text-neutral-400 font-mono">100% PURE JUICE</span>
-                  </div>
-                  <p className="text-sm font-medium text-cyan-400/90 tracking-wider mb-4">
-                    Pure Refreshment. Zero Compromise.
-                  </p>
-                  <p className="text-sm text-neutral-300 font-light leading-relaxed mb-6">
-                    Cold-pressed natural hydration infused with vibrant real fruits, living electrolytes, and restorative botanicals. Never diluted, never sweetened artificially.
-                  </p>
-
-                  {/* Highlights */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-neutral-300">
-                      Cold-Pressed
-                    </span>
-                    <span className="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-neutral-300">
-                      Zero Preservatives
-                    </span>
-                    <span className="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-neutral-300">
-                      Zero Sugar
-                    </span>
-                  </div>
+              {/* Product Narrative - Pure Typography (No Box) */}
+              <div className="lg:col-span-6 flex flex-col justify-center">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-xs font-mono tracking-[0.28em] text-[#38bdf8] uppercase">
+                    COLD-PRESSED JUICES &amp; HYDRATION
+                  </span>
                 </div>
 
-                <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-xs tracking-widest text-neutral-400 uppercase">
-                    Next-Gen Hydration
+                <h3
+                  className="text-4xl sm:text-5xl lg:text-6xl font-light text-white tracking-wide uppercase"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  Gulpit
+                </h3>
+
+                <p className="text-base sm:text-lg text-cyan-400/90 font-light tracking-wider mt-2 mb-6">
+                  Pure Refreshment. Zero Compromise.
+                </p>
+
+                <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed mb-8">
+                  Cold-pressed natural hydration extracted from vibrant real fruits, living electrolytes, and restorative organic botanicals. Retaining complete enzymatic vitality through unheated processing—never diluted, never preserved artificially.
+                </p>
+
+                {/* Minimalist Feature Tags without boxes */}
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-neutral-400 font-light pb-8 border-b border-white/10">
+                  <span className="flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-cyan-400" />
+                    Cold-Pressed Extraction
                   </span>
-                  <div className="w-8 h-8 rounded-full bg-white/5 group-hover:bg-cyan-500/20 flex items-center justify-center text-white group-hover:text-cyan-400 transition-colors">
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
+                  <span className="flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-cyan-400" />
+                    Zero Preservatives
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-cyan-400" />
+                    Zero Added Sugar
+                  </span>
                 </div>
               </div>
             </div>
 
             {/* BRAND 2: SNACKY'S */}
-            <div className="group rounded-3xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/10 hover:border-cyan-500/40 overflow-hidden transition-all duration-500 flex flex-col justify-between shadow-2xl">
-              {/* Product Visual Showcase */}
-              <div className="relative w-full aspect-square sm:aspect-[4/3] overflow-hidden bg-neutral-950 flex items-center justify-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+              {/* Product Visual */}
+              <div className="lg:col-span-6 lg:order-2 relative aspect-square sm:aspect-[4/3] w-full overflow-hidden">
                 <Image
                   src="/brands/snackys.jpg"
-                  alt="Snacky's Healthy Roasted Snacks"
+                  alt="Snacky's Wholesome Clean Roasted Snacks"
                   fill
                   priority
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-center grayscale-[15%] hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
-                <div className="absolute top-4 left-4 sm:top-6 sm:left-6 px-3.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[11px] font-mono tracking-widest text-cyan-400 uppercase">
-                  SNACKS
-                </div>
               </div>
 
-              {/* Product Info */}
-              <div className="p-8 sm:p-10 flex flex-col justify-between flex-1">
-                <div>
-                  <div className="flex items-baseline justify-between mb-2">
-                    <h3
-                      className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-wide uppercase"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                    >
-                      Snacky&apos;s
-                    </h3>
-                    <span className="text-xs text-neutral-400 font-mono">ROASTED &amp; PURE</span>
-                  </div>
-                  <p className="text-sm font-medium text-cyan-400/90 tracking-wider mb-4">
-                    Crave Clean. Snack Pure.
-                  </p>
-                  <p className="text-sm text-neutral-300 font-light leading-relaxed mb-6">
-                    Artisanal roasted almonds, ancient grains, and superfood blends crafted with slow heat and zero chemicals. Providing wholesome all-day energy with guilt-free crunch.
-                  </p>
-
-                  {/* Highlights */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-neutral-300">
-                      Slow-Roasted
-                    </span>
-                    <span className="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-neutral-300">
-                      Zero Chemicals
-                    </span>
-                    <span className="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-neutral-300">
-                      Zero Added Sugar
-                    </span>
-                  </div>
+              {/* Product Narrative - Pure Typography (No Box) */}
+              <div className="lg:col-span-6 lg:order-1 flex flex-col justify-center">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-xs font-mono tracking-[0.28em] text-[#38bdf8] uppercase">
+                    ARTISANAL ROASTED SUPERFOOD SNACKS
+                  </span>
                 </div>
 
-                <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-xs tracking-widest text-neutral-400 uppercase">
-                    Wholesome Nutrition
+                <h3
+                  className="text-4xl sm:text-5xl lg:text-6xl font-light text-white tracking-wide uppercase"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  Snacky&apos;s
+                </h3>
+
+                <p className="text-base sm:text-lg text-cyan-400/90 font-light tracking-wider mt-2 mb-6">
+                  Crave Clean. Snack Pure.
+                </p>
+
+                <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed mb-8">
+                  Artisanal slow-roasted almonds, ancient grains, and superfood blends crafted with gentle dry heat and zero chemical seasonings. Delivering dense macronutrient fuel, satisfying natural crunch, and untainted biological purity for guilt-free all-day nourishment.
+                </p>
+
+                {/* Minimalist Feature Tags without boxes */}
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-neutral-400 font-light pb-8 border-b border-white/10">
+                  <span className="flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-cyan-400" />
+                    Slow Dry Roasted
                   </span>
-                  <div className="w-8 h-8 rounded-full bg-white/5 group-hover:bg-cyan-500/20 flex items-center justify-center text-white group-hover:text-cyan-400 transition-colors">
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
+                  <span className="flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-cyan-400" />
+                    Zero Chemicals
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-cyan-400" />
+                    Zero Added Sugar
+                  </span>
                 </div>
               </div>
             </div>
