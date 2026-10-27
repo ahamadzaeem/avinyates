@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import Navbar from "../navigation/Navbar";
 
@@ -66,22 +67,24 @@ export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
             Pioneering breakthrough ventures and next-generation technologies to unlock futuristic opportunities for mankind.
           </p>
 
-          {/* Action Button linking to Mission Section */}
+          {/* Action Button - Pure Boxless Typography Link */}
           <div className="mt-8 sm:mt-10">
             <a
               href="#mission"
-              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full border border-white/40 hover:border-white bg-black/40 hover:bg-black/70 backdrop-blur-md text-xs sm:text-sm text-white font-medium transition-all duration-300 group shadow-xl shadow-black/80 active:scale-95"
+              className="inline-flex items-center gap-3 text-sm sm:text-base text-white hover:text-cyan-400 font-light tracking-wider transition-colors duration-300 group select-none"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              <span>Explore Our Mission</span>
-              <span className="transition-transform duration-300 group-hover:translate-x-1 text-sm">
+              <span className="border-b border-white/40 group-hover:border-cyan-400 pb-0.5 transition-colors">
+                Explore Our Mission
+              </span>
+              <span className="transition-transform duration-300 group-hover:translate-y-1 text-cyan-400 text-base">
                 ↓
               </span>
             </a>
           </div>
         </div>
 
-        {/* Scroll Indicator linking to Section 2 */}
+        {/* Scroll Indicator linking to Section 2 - Boxless */}
         <a
           href="#mission"
           className="pb-4 flex flex-col items-center justify-center group cursor-pointer transition-opacity hover:opacity-100 opacity-80"
@@ -90,14 +93,12 @@ export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
           <span className="text-[10px] tracking-[0.25em] text-neutral-400 uppercase mb-2 font-medium group-hover:text-cyan-400 transition-colors">
             SCROLL
           </span>
-          <div className="w-[1px] h-6 bg-gradient-to-b from-transparent via-white/40 to-white/80 group-hover:via-cyan-400 group-hover:to-cyan-400 transition-colors" />
-          <div className="w-6 h-6 mt-1 rounded-full border border-white/30 group-hover:border-cyan-400/60 flex items-center justify-center text-white/80 group-hover:text-cyan-400 shadow-lg transition-colors">
-            <ChevronDown className="w-3.5 h-3.5 animate-bounce" />
-          </div>
+          <div className="w-[1px] h-7 bg-gradient-to-b from-transparent via-white/50 to-white/90 group-hover:via-cyan-400 group-hover:to-cyan-400 transition-colors" />
+          <ChevronDown className="w-4 h-4 text-white/80 group-hover:text-cyan-400 transition-colors animate-bounce mt-1" />
         </a>
       </section>
 
-      {/* SECTION 2: Our Mission - Exactly Matching Template Image (No Boxes) */}
+      {/* SECTION 2: Our Mission - Exactly Matching Template Image (Zero Boxes) */}
       <section
         id="mission"
         className="relative z-20 min-h-[100dvh] w-full px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-8 flex flex-col justify-between"
@@ -126,27 +127,27 @@ export default function HeroSection({ onReplayLoading }: HeroSectionProps) {
             enterprise by creating futuristic opportunities for mankind.
           </h2>
 
-          {/* Pill Outline Button */}
+          {/* Action Link - Pure Boxless Typography Link */}
           <div className="mt-8 sm:mt-10">
-            <a
-              href="#"
-              className="inline-flex items-center gap-3 px-7 py-3 rounded-full border border-white/40 hover:border-white bg-black/30 hover:bg-black/60 backdrop-blur-md text-xs sm:text-sm text-white font-normal transition-all duration-300 group shadow-xl shadow-black/70 active:scale-95"
+            <Link
+              href="/businesses/fmcg"
+              className="inline-flex items-center gap-3 text-sm sm:text-base text-white hover:text-cyan-400 font-light tracking-wider transition-colors duration-300 group select-none"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              <span>Explore Avinyates</span>
-              <span className="transition-transform duration-300 group-hover:translate-x-1 text-sm">
+              <span className="border-b border-white/40 group-hover:border-cyan-400 pb-0.5 transition-colors">
+                Explore Businesses
+              </span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1.5 text-cyan-400 text-base">
                 →
               </span>
-            </a>
+            </Link>
           </div>
         </div>
 
-        {/* Minimalist Bottom-Center Scroll Indicator Matching Reference Image */}
+        {/* Minimalist Bottom-Center Scroll Indicator - Boxless */}
         <div className="pb-4 flex flex-col items-center justify-center pointer-events-none">
-          <div className="w-[1px] h-7 bg-gradient-to-b from-transparent via-white/40 to-white/80" />
-          <div className="w-6 h-6 mt-1 rounded-full border border-white/30 flex items-center justify-center text-white/80 shadow-lg">
-            <ChevronDown className="w-3.5 h-3.5 animate-bounce" />
-          </div>
+          <div className="w-[1px] h-7 bg-gradient-to-b from-transparent via-white/50 to-white/90" />
+          <ChevronDown className="w-4 h-4 text-white/80 animate-bounce mt-1" />
         </div>
       </section>
     </div>

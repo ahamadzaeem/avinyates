@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/navigation/Navbar";
-import { Users, Compass, Award, Lightbulb, Globe, Shield } from "lucide-react";
 
 export default function TeamPage() {
   const leadership = [
@@ -11,42 +11,46 @@ export default function TeamPage() {
       name: "Executive Leadership",
       role: "Strategic Direction & Governance",
       desc: "Guiding Avinyates India's global trajectory across high-growth frontier sectors with bold vision and uncompromising ethical standards.",
-      icon: Compass,
       tag: "VISION",
     },
     {
       name: "Frontier Aerospace & Defence",
       role: "Aeronautics & Autonomous Systems",
       desc: "Distinguished propulsion engineers and defense technology veterans pioneering next-generation aerospace capabilities.",
-      icon: Shield,
       tag: "DEFENCE",
     },
     {
       name: "Food Revolution & Nutrition",
       role: "Clean Food Science & Formulation",
       desc: "Pioneering bio-chemists and food technologists dedicated to 100% preservative-free, zero-chemical, zero-added-sugar FMCG excellence.",
-      icon: Award,
       tag: "FMCG",
     },
     {
       name: "Clean Energy & Grid Systems",
       role: "Sustainable Infrastructure & Storage",
       desc: "Renewable energy pioneers developing high-density solid-state battery reserves and intelligent decentralized distribution.",
-      icon: Lightbulb,
       tag: "ENERGY",
     },
   ];
 
   return (
     <div className="relative min-h-screen bg-black text-white selection:bg-cyan-500/30 selection:text-white select-none">
+      {/* Fixed Diagonal Milky Way Starfield Background */}
+      <div className="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+        <Image
+          src="/starfield.png"
+          alt="Diagonal Milky Way Starfield"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+      </div>
+
       <Navbar currentPath="/team" />
 
       {/* Hero Section */}
-      <section className="relative min-h-[75vh] pt-32 sm:pt-40 md:pt-48 pb-16 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 flex flex-col justify-center overflow-hidden">
-        {/* Ambient Glow */}
-        <div className="absolute top-1/4 -right-40 w-96 h-96 bg-cyan-600/15 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute top-1/3 -left-40 w-96 h-96 bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
-
+      <section className="relative z-10 min-h-[70vh] pt-32 sm:pt-40 md:pt-48 pb-16 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 flex flex-col justify-center overflow-hidden">
         <div className="relative max-w-5xl mx-auto w-full z-10">
           <div className="flex items-center gap-2.5 mb-6">
             <span className="w-6 h-[2px] bg-[#38bdf8] rounded-full shadow-[0_0_12px_#38bdf8]" />
@@ -59,7 +63,7 @@ export default function TeamPage() {
           </div>
 
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] text-white font-light leading-[1.08] tracking-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] text-white font-light leading-[1.08] tracking-tight drop-shadow-[0_2px_20px_rgba(0,0,0,0.9)]"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             Our{" "}
@@ -69,7 +73,7 @@ export default function TeamPage() {
           </h1>
 
           <p
-            className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-neutral-300 font-light max-w-2xl leading-relaxed"
+            className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-neutral-300 font-light max-w-2xl leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             The visionaries, engineers, and scientists united by a single purpose: inspiring radical innovation and elevating human potential across India and the globe.
@@ -77,33 +81,31 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Leadership & Divisions Showcase - Zero Boxes */}
-      <section className="relative z-10 py-16 sm:py-24 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 border-t border-white/10">
+      {/* Leadership & Divisions Showcase - Boxless Pure Typography */}
+      <section className="relative z-10 py-16 sm:py-24 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
             {leadership.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="flex flex-col justify-between pt-8 border-t border-white/10 group"
+                  className="flex flex-col justify-between group"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-xs font-mono tracking-[0.25em] text-[#38bdf8] uppercase">
-                        0{index + 1} / {item.tag}
-                      </span>
-                    </div>
+                    <span className="text-xs font-mono tracking-[0.25em] text-[#38bdf8] uppercase block mb-3">
+                      0{index + 1} / {item.tag}
+                    </span>
 
-                    <h3
-                      className="text-2xl sm:text-3xl text-white font-light tracking-wide mb-2 group-hover:text-cyan-400 transition-colors"
+                    <h2
+                      className="text-2xl sm:text-3xl text-white font-light tracking-wide mb-2 group-hover:text-cyan-400 transition-colors drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]"
                       style={{ fontFamily: "'Montserrat', sans-serif" }}
                     >
                       {item.name}
-                    </h3>
+                    </h2>
                     <p className="text-sm text-cyan-400/90 font-light mb-3">
                       {item.role}
                     </p>
-                    <p className="text-sm text-neutral-400 font-light leading-relaxed">
+                    <p className="text-sm text-neutral-400 font-light leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">
                       {item.desc}
                     </p>
                   </div>
@@ -114,8 +116,8 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="w-full py-12 px-6 sm:px-10 md:px-14 lg:px-20 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 gap-4">
+      {/* Footer - Minimalist Boxless */}
+      <footer className="relative z-10 w-full py-14 px-6 sm:px-10 md:px-14 lg:px-20 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 gap-4">
         <div>© {new Date().getFullYear()} AVINYATES INDIA. All Rights Reserved.</div>
         <div className="flex items-center gap-6">
           <Link href="/" className="text-neutral-400 hover:text-white transition-colors">Home</Link>

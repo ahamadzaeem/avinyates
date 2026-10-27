@@ -26,7 +26,7 @@ export default function Navbar({ currentPath = "/" }: NavbarProps) {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full px-6 sm:px-10 md:px-14 lg:px-18 xl:px-20 pt-6 sm:pt-7 md:pt-9 lg:pt-10 flex items-center justify-between pointer-events-auto backdrop-blur-[4px] bg-black/20 transition-all">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full px-6 sm:px-10 md:px-14 lg:px-18 xl:px-20 pt-6 sm:pt-7 md:pt-9 lg:pt-10 flex items-center justify-between pointer-events-auto bg-transparent transition-all">
       {/* Brand Logo Lockup: Chrome Emblem + Scaled Montserrat Typography */}
       <Link
         href="/"
