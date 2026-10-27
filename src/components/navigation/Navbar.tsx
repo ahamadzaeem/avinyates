@@ -95,61 +95,43 @@ export default function Navbar({ currentPath = "/" }: NavbarProps) {
             />
           </button>
 
-          {/* Frameless Dropdown Menu - No boxes, No borders */}
+          {/* Frameless Dropdown Menu - No boxes, Pure Typography */}
           {dropdownOpen && (
-            <div className="absolute right-0 top-full pt-4 min-w-[260px] z-50 flex flex-col gap-5 text-right animate-in fade-in slide-in-from-top-1 duration-200">
+            <div className="absolute right-0 top-full pt-4 min-w-[220px] z-50 flex flex-col gap-3.5 text-right animate-in fade-in slide-in-from-top-1 duration-200">
               {/* FMCG */}
               <Link
                 href="/businesses/fmcg"
                 onClick={() => setDropdownOpen(false)}
-                className="group flex flex-col items-end transition-all duration-200"
+                className="group flex items-center justify-end gap-2 transition-all duration-200 py-1"
               >
-                <div className="flex items-center gap-2">
-                  <span className="text-white text-base lg:text-lg font-medium tracking-wide group-hover:text-cyan-400 group-hover:drop-shadow-[0_0_16px_rgba(56,189,248,0.7)] transition-all">
-                    FMCG
-                  </span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <span className="text-xs text-cyan-400/80 tracking-widest uppercase font-light mt-0.5">
-                  Food Revolution
+                <span className="text-neutral-300 group-hover:text-white text-base lg:text-lg font-light tracking-wider group-hover:drop-shadow-[0_0_16px_rgba(56,189,248,0.7)] transition-all">
+                  FMCG
                 </span>
-                <span className="text-[11px] text-neutral-400 font-light mt-0.5">
-                  Zero Preservatives, Zero Chemicals, Zero Sugar
-                </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
               </Link>
 
               {/* Aerospace and Defence */}
               <Link
                 href="/businesses/aerospace-defence"
                 onClick={() => setDropdownOpen(false)}
-                className="group flex flex-col items-end transition-all duration-200"
+                className="group flex items-center justify-end gap-2 transition-all duration-200 py-1"
               >
-                <div className="flex items-center gap-2">
-                  <span className="text-white text-base lg:text-lg font-medium tracking-wide group-hover:text-cyan-400 group-hover:drop-shadow-[0_0_16px_rgba(56,189,248,0.7)] transition-all">
-                    AEROSPACE &amp; DEFENCE
-                  </span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <span className="text-[11px] text-neutral-400 font-light mt-0.5">
-                  Autonomous frontier &amp; defence platforms
+                <span className="text-neutral-300 group-hover:text-white text-base lg:text-lg font-light tracking-wider group-hover:drop-shadow-[0_0_16px_rgba(56,189,248,0.7)] transition-all">
+                  AEROSPACE &amp; DEFENCE
                 </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
               </Link>
 
               {/* Energy */}
               <Link
                 href="/businesses/energy"
                 onClick={() => setDropdownOpen(false)}
-                className="group flex flex-col items-end transition-all duration-200"
+                className="group flex items-center justify-end gap-2 transition-all duration-200 py-1"
               >
-                <div className="flex items-center gap-2">
-                  <span className="text-white text-base lg:text-lg font-medium tracking-wide group-hover:text-cyan-400 group-hover:drop-shadow-[0_0_16px_rgba(56,189,248,0.7)] transition-all">
-                    ENERGY
-                  </span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <span className="text-[11px] text-neutral-400 font-light mt-0.5">
-                  Clean sustainable future-scale energy
+                <span className="text-neutral-300 group-hover:text-white text-base lg:text-lg font-light tracking-wider group-hover:drop-shadow-[0_0_16px_rgba(56,189,248,0.7)] transition-all">
+                  ENERGY
                 </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
               </Link>
             </div>
           )}
@@ -173,7 +155,7 @@ export default function Navbar({ currentPath = "/" }: NavbarProps) {
         </button>
       </div>
 
-      {/* Mobile Frameless Slide-Down Menu Overlay - No boxes */}
+      {/* Mobile Frameless Slide-Down Menu Overlay */}
       {mobileMenuOpen && (
         <div
           className="absolute top-full left-0 right-0 px-8 py-8 bg-black/95 backdrop-blur-3xl flex flex-col gap-6 text-neutral-200 z-50 md:hidden animate-in fade-in duration-200"
@@ -195,23 +177,23 @@ export default function Navbar({ currentPath = "/" }: NavbarProps) {
               <Link
                 href="/businesses/fmcg"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base text-neutral-300 hover:text-cyan-400 font-light transition-colors"
+                className="text-base text-neutral-300 hover:text-white font-light transition-colors"
               >
-                FMCG &ndash; <span className="text-cyan-400 text-sm">Food Revolution</span>
+                FMCG
               </Link>
               <Link
                 href="/businesses/aerospace-defence"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base text-neutral-300 hover:text-cyan-400 font-light transition-colors"
+                className="text-base text-neutral-300 hover:text-white font-light transition-colors"
               >
-                Aerospace &amp; Defence
+                AEROSPACE &amp; DEFENCE
               </Link>
               <Link
                 href="/businesses/energy"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base text-neutral-300 hover:text-cyan-400 font-light transition-colors"
+                className="text-base text-neutral-300 hover:text-white font-light transition-colors"
               >
-                Energy
+                ENERGY
               </Link>
             </div>
           </div>
