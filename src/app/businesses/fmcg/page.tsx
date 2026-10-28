@@ -210,15 +210,22 @@ export default function FMCGPage() {
                 Cold-pressed natural hydration and savoury spreads crafted from real fruits and botanicals. Clean labels, complete vitality.
               </p>
 
-              {/* Pill Button with Cyan Border - Opens Brochure Details Modal */}
-              <div>
-                <button
-                  onClick={() => setActiveModal("gulpit")}
+              {/* Pill Button with Cyan Border - Links to dedicated Gulpit Page */}
+              <div className="flex flex-wrap items-center gap-3">
+                <Link
+                  href="/gulpit"
                   className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-[#00BFFF]/70 hover:border-[#00BFFF] bg-black/40 hover:bg-[#00BFFF]/10 text-xs sm:text-sm text-white font-light tracking-wide transition-all duration-300 group shadow-lg shadow-black/80 cursor-pointer"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   <span>Explore Gulpit</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#00BFFF] transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+                <button
+                  onClick={() => setActiveModal("gulpit")}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/20 hover:border-white/50 bg-black/30 text-xs text-neutral-300 hover:text-white transition-all duration-300 cursor-pointer"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  <span>Quick Specs</span>
                 </button>
               </div>
             </div>
