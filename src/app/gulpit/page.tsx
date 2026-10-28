@@ -242,21 +242,34 @@ export default function GulpitPage() {
             </div>
           </div>
 
-          {/* Right Column: Hero Splash Visual */}
-          <div className="lg:col-span-6 relative flex items-center justify-center">
-            {/* Ambient Base Glow */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-4/5 h-24 bg-[#00BFFF]/15 rounded-full blur-3xl pointer-events-none" />
+          {/* Right Column: Gulpit Savoury Spread Collection Hero Visual */}
+          <div className="lg:col-span-6 relative flex flex-col items-center justify-end">
+            {/* Ambient Cyan Base Glow */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-4/5 h-20 bg-[#00BFFF]/20 rounded-full blur-3xl pointer-events-none" />
 
-            {/* High-res Hero Splash Composite */}
-            <div className="relative w-full aspect-[4/3] sm:aspect-[16/12] max-w-[680px]">
+            {/* High-res 5-Bottle Collection (Seamless Transparent PNG, Box-less) */}
+            <div className="relative w-full aspect-[16/9] max-w-[680px]">
               <Image
-                src="/brands/gulpit/hero_splash.png"
-                alt="Gulpit Bold Flavours Hero Splash"
+                src="/brands/gulpit/gulpit_savoury_spread_collection.png"
+                alt="Gulpit Savoury Spread Collection"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-contain object-center drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)] hover:scale-[1.02] transition-transform duration-700"
+                className="object-contain object-bottom drop-shadow-[0_25px_45px_rgba(0,0,0,0.95)] hover:scale-[1.03] transition-transform duration-500"
               />
+            </div>
+
+            {/* Glossy Floor Reflection for Seamless Depth */}
+            <div className="relative w-full h-12 sm:h-16 -mt-1 overflow-hidden opacity-25 scale-y-[-1] pointer-events-none [mask-image:linear-gradient(to_bottom,black_10%,transparent_85%)] blur-[0.6px]">
+              <div className="relative w-full aspect-[16/9] max-w-[680px] mx-auto">
+                <Image
+                  src="/brands/gulpit/gulpit_savoury_spread_collection.png"
+                  alt="Gulpit Floor Reflection"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-contain object-bottom"
+                />
+              </div>
             </div>
           </div>
         </section>
