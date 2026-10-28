@@ -136,6 +136,16 @@ export default function Navbar({ currentPath = "/" }: NavbarProps) {
             </div>
           )}
         </div>
+
+        {/* Action Button: Get in Touch */}
+        <Link
+          href="/team"
+          className="hidden lg:inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#00BFFF]/60 hover:border-[#00BFFF] bg-black/40 hover:bg-[#00BFFF]/10 text-xs text-white font-normal tracking-wide transition-all duration-300 group"
+          style={{ fontFamily: "'Montserrat', sans-serif" }}
+        >
+          <span>Get in Touch</span>
+          <span className="text-[#00BFFF] transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </Link>
       </nav>
 
       {/* Mobile Hamburger Button */}
