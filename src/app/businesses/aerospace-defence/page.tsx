@@ -104,7 +104,7 @@ export default function AerospaceDefencePage() {
 
       {/* Footer - Minimalist Boxless */}
       <footer className="relative z-10 w-full py-14 px-6 sm:px-10 md:px-14 lg:px-20 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 gap-4">
-        <div>© {new Date().getFullYear()} AVINYATES INDIA. Aerospace &amp; Defence Division.</div>
+        <div>© 2026 AVINYATES INDIA. Aerospace &amp; Defence Division.</div>
         <div className="flex items-center gap-6">
           <Link href="/" className="text-neutral-400 hover:text-white transition-colors">Home</Link>
           <span className="text-neutral-600">•</span>

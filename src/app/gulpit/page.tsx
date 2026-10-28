@@ -527,6 +527,7 @@ export default function GulpitPage() {
               src="/chrome_emblem.png"
               alt="Avinyates Emblem"
               fill
+              sizes="48px"
               className="object-contain object-left"
             />
           </div>
