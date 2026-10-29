@@ -95,44 +95,49 @@ export default function Navbar({ currentPath = "/" }: NavbarProps) {
             />
           </button>
 
-          {/* Frameless Dropdown Menu - No boxes, Pure Typography */}
+          {/* Dropdown Menu */}
           {dropdownOpen && (
-            <div className="absolute right-0 top-full pt-4 min-w-[220px] z-50 flex flex-col gap-3.5 text-right animate-in fade-in slide-in-from-top-1 duration-200">
-              {/* FMCG */}
-              <Link
-                href="/businesses/fmcg"
-                onClick={() => setDropdownOpen(false)}
-                className="group flex items-center justify-end gap-2 transition-all duration-200 py-1"
-              >
-                <span className="text-neutral-300 group-hover:text-white text-base lg:text-lg font-light tracking-wider group-hover:drop-shadow-[0_0_16px_rgba(56,189,248,0.7)] transition-all">
-                  FMCG
-                </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
+            <div className="absolute right-0 top-full mt-2 min-w-[200px] z-50 animate-in fade-in slide-in-from-top-1 duration-200 rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.85)] bg-black/80 backdrop-blur-2xl">
+              {/* Cyan top accent line */}
+              <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#00BFFF]/60 to-transparent" />
 
-              {/* Aerospace and Defence */}
-              <Link
-                href="/businesses/aerospace-defence"
-                onClick={() => setDropdownOpen(false)}
-                className="group flex items-center justify-end gap-2 transition-all duration-200 py-1"
-              >
-                <span className="text-neutral-300 group-hover:text-white text-base lg:text-lg font-light tracking-wider group-hover:drop-shadow-[0_0_16px_rgba(56,189,248,0.7)] transition-all">
-                  AEROSPACE &amp; DEFENCE
-                </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
+              <div className="flex flex-col px-2 py-3 gap-1">
+                {/* FMCG */}
+                <Link
+                  href="/businesses/fmcg"
+                  onClick={() => setDropdownOpen(false)}
+                  className="group flex items-center justify-between gap-3 px-4 py-2.5 rounded-xl hover:bg-white/5 transition-all duration-200"
+                >
+                  <span className="text-neutral-300 group-hover:text-white text-sm font-light tracking-widest uppercase transition-all">
+                    FMCG
+                  </span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00BFFF] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                </Link>
 
-              {/* Energy */}
-              <Link
-                href="/businesses/energy"
-                onClick={() => setDropdownOpen(false)}
-                className="group flex items-center justify-end gap-2 transition-all duration-200 py-1"
-              >
-                <span className="text-neutral-300 group-hover:text-white text-base lg:text-lg font-light tracking-wider group-hover:drop-shadow-[0_0_16px_rgba(56,189,248,0.7)] transition-all">
-                  ENERGY
-                </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
+                {/* Aerospace and Defence */}
+                <Link
+                  href="/businesses/aerospace-defence"
+                  onClick={() => setDropdownOpen(false)}
+                  className="group flex items-center justify-between gap-3 px-4 py-2.5 rounded-xl hover:bg-white/5 transition-all duration-200"
+                >
+                  <span className="text-neutral-300 group-hover:text-white text-sm font-light tracking-widest uppercase transition-all">
+                    AEROSPACE &amp; DEFENCE
+                  </span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00BFFF] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                </Link>
+
+                {/* Energy */}
+                <Link
+                  href="/businesses/energy"
+                  onClick={() => setDropdownOpen(false)}
+                  className="group flex items-center justify-between gap-3 px-4 py-2.5 rounded-xl hover:bg-white/5 transition-all duration-200"
+                >
+                  <span className="text-neutral-300 group-hover:text-white text-sm font-light tracking-widest uppercase transition-all">
+                    ENERGY
+                  </span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00BFFF] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                </Link>
+              </div>
             </div>
           )}
         </div>
