@@ -200,8 +200,8 @@ export default function SnackysPage() {
             {/* High-res 5-Canister Collection (Seamless Transparent PNG, Box-less) */}
             <div className="relative w-full aspect-[16/9] max-w-[680px]">
               <Image
-                src="/brands/snackys/snackys_collection.png"
-                alt="Snacky's Flavor Collection Cans"
+                src="/brands/snackys/snackys_v_collection.png"
+                alt="Snacky's V-Shaped Gourmet Chip Can Collection"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -213,7 +213,7 @@ export default function SnackysPage() {
             <div className="relative w-full h-12 sm:h-16 -mt-1 overflow-hidden opacity-25 scale-y-[-1] pointer-events-none [mask-image:linear-gradient(to_bottom,black_10%,transparent_85%)] blur-[0.6px]">
               <div className="relative w-full aspect-[16/9] max-w-[680px] mx-auto">
                 <Image
-                  src="/brands/snackys/snackys_collection.png"
+                  src="/brands/snackys/snackys_v_collection.png"
                   alt="Snacky's Floor Reflection"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

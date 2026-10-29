@@ -356,8 +356,8 @@ export default function FMCGPage() {
               {/* Main Product Lineup */}
               <div className="relative w-full aspect-[16/10] sm:aspect-[16/10.5]">
                 <Image
-                  src="/brands/snackys_collection.png"
-                  alt="Snacky's Flavor Collection Cans - 5 Canisters"
+                  src="/brands/snackys/snackys_v_collection.png"
+                  alt="Snacky's V-Shaped Gourmet Chip Can Collection - 5 Canisters"
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 40vw"
@@ -370,7 +370,7 @@ export default function FMCGPage() {
               <div className="relative w-full h-12 sm:h-16 -mt-1 overflow-hidden opacity-30 scale-y-[-1] pointer-events-none [mask-image:linear-gradient(to_bottom,black_10%,transparent_90%)] blur-[0.6px]">
                 <div className="relative w-full aspect-[16/10] sm:aspect-[16/10.5]">
                   <Image
-                    src="/brands/snackys_collection.png"
+                    src="/brands/snackys/snackys_v_collection.png"
                     alt="Snacky's Floor Reflection"
                     fill
                     sizes="(max-width: 768px) 100vw, 40vw"
