@@ -1,15 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/navigation/Navbar";
-import { Leaf, FlaskConical, Heart, ArrowRight, X, Sparkles, Utensils, ShieldCheck } from "lucide-react";
+import { Leaf, FlaskConical, Heart, ArrowRight } from "lucide-react";
 
 export default function FMCGPage() {
-  const [activeModal, setActiveModal] = useState<"gulpit" | "snackys" | null>(null);
-  const [gulpitTab, setGulpitTab] = useState<"savoury" | "fruit">("fruit");
-
   // Official Gulpit Flavours from Avinyates Corporate Brochure
   const gulpitSavouryFlavours = [
     {
@@ -189,7 +186,7 @@ export default function FMCGPage() {
                 className="text-[10px] sm:text-[11px] font-mono tracking-[0.26em] text-[#00BFFF] uppercase block mb-2"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                COLD-PRESSED JUICES &amp; HYDRATION
+                VACUUM COLD PRESSED FRUIT &amp; HERB SPREAD
               </span>
 
               <h2
@@ -207,7 +204,7 @@ export default function FMCGPage() {
               </p>
 
               <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed mb-6 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">
-                Cold-pressed natural hydration and savoury spreads crafted from real fruits and botanicals. Clean labels, complete vitality.
+                Vacuum cold pressed fruit spreads and herb spreads crafted from real fruits and botanicals, clean label and complete vitality.
               </p>
 
               {/* Pill Button with Cyan Border - Links to dedicated Gulpit Page */}
@@ -220,41 +217,12 @@ export default function FMCGPage() {
                   <span>Explore Gulpit</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#00BFFF] transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
-                <button
-                  onClick={() => setActiveModal("gulpit")}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/20 hover:border-white/50 bg-black/30 text-xs text-neutral-300 hover:text-white transition-all duration-300 cursor-pointer"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
-                >
-                  <span>Quick Specs</span>
-                </button>
               </div>
             </div>
 
             {/* Right Sub-column: 5-Bottle Collection Image with Glossy Reflection */}
             <div className="md:col-span-7 relative flex flex-col items-center justify-end">
-              {/* Collection Switcher Pills */}
-              <div className="flex items-center gap-2 mb-3 z-10">
-                <button
-                  onClick={() => setGulpitTab("fruit")}
-                  className={`px-3 py-1 rounded-full text-xs font-medium tracking-wide transition-all cursor-pointer ${
-                    gulpitTab === "fruit"
-                      ? "bg-[#00BFFF] text-black shadow-[0_0_15px_rgba(0,191,255,0.5)]"
-                      : "bg-white/10 text-neutral-300 hover:text-white border border-white/10"
-                  }`}
-                >
-                  Tropical Collection
-                </button>
-                <button
-                  onClick={() => setGulpitTab("savoury")}
-                  className={`px-3 py-1 rounded-full text-xs font-medium tracking-wide transition-all cursor-pointer ${
-                    gulpitTab === "savoury"
-                      ? "bg-[#00BFFF] text-black shadow-[0_0_15px_rgba(0,191,255,0.5)]"
-                      : "bg-white/10 text-neutral-300 hover:text-white border border-white/10"
-                  }`}
-                >
-                  Savoury Collection
-                </button>
-              </div>
+
 
               {/* Soft floor glow */}
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4/5 h-10 bg-[#00BFFF]/15 rounded-full blur-2xl pointer-events-none" />
@@ -262,21 +230,12 @@ export default function FMCGPage() {
               {/* Main Product Lineup */}
               <div className="relative w-full aspect-[16/10] sm:aspect-[16/10.5]">
                 <Image
-                  src={
-                    gulpitTab === "fruit"
-                      ? "/brands/gulpit/gulpit_tropical_collection.png"
-                      : "/brands/gulpit/gulpit_savoury_spread_collection.png"
-                  }
-                  alt={
-                    gulpitTab === "fruit"
-                      ? "Gulpit Tropical Sauce Collection - 5 Bottles"
-                      : "Gulpit Savoury Spread Collection - 5 Bottles"
-                  }
+                  src="/brands/gulpit/gulpit_tropical_collection.png"
+                  alt="Gulpit Tropical Collection - 5 Bottles"
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 40vw"
-                  className="object-contain object-bottom drop-shadow-[0_18px_35px_rgba(0,0,0,0.95)] hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-                  onClick={() => setActiveModal("gulpit")}
+                  className="object-contain object-bottom drop-shadow-[0_18px_35px_rgba(0,0,0,0.95)] hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
 
@@ -284,11 +243,7 @@ export default function FMCGPage() {
               <div className="relative w-full h-12 sm:h-16 -mt-1 overflow-hidden opacity-30 scale-y-[-1] pointer-events-none [mask-image:linear-gradient(to_bottom,black_10%,transparent_90%)] blur-[0.6px]">
                 <div className="relative w-full aspect-[16/10] sm:aspect-[16/10.5]">
                   <Image
-                    src={
-                      gulpitTab === "fruit"
-                        ? "/brands/gulpit/gulpit_tropical_collection.png"
-                        : "/brands/gulpit/gulpit_savoury_spread_collection.png"
-                    }
+                    src="/brands/gulpit/gulpit_tropical_collection.png"
                     alt="Gulpit Floor Reflection"
                     fill
                     sizes="(max-width: 768px) 100vw, 40vw"
@@ -325,7 +280,7 @@ export default function FMCGPage() {
               </p>
 
               <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed mb-6 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">
-                Artisanal slow-roasted snacks made from ancient grains, nutrient-rich ingredients and clean seasonings. Wholesome indulgence for everyday living.
+                Made from tropical fruits and healthy nutrient-rich roots with clean seasonings. Wholesome indulgence for everyday living.
               </p>
 
               {/* Pill Button with Cyan Border - Links to dedicated Snacky's Page */}
@@ -338,13 +293,6 @@ export default function FMCGPage() {
                   <span>Explore Snacky&apos;s</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#00BFFF] transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
-                <button
-                  onClick={() => setActiveModal("snackys")}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/20 hover:border-white/50 bg-black/30 text-xs text-neutral-300 hover:text-white transition-all duration-300 cursor-pointer"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
-                >
-                  <span>Quick Specs</span>
-                </button>
               </div>
             </div>
 
@@ -361,8 +309,7 @@ export default function FMCGPage() {
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 40vw"
-                  className="object-contain object-bottom drop-shadow-[0_18px_35px_rgba(0,0,0,0.95)] hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
-                  onClick={() => setActiveModal("snackys")}
+                  className="object-contain object-bottom drop-shadow-[0_18px_35px_rgba(0,0,0,0.95)] hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
 
@@ -538,192 +485,6 @@ export default function FMCGPage() {
         </div>
       </footer>
 
-      {/* ========================================================================= */}
-      {/* INTERACTIVE PRODUCT EXPLORER MODAL (From Avinyates Corporate Brochure) */}
-      {/* ========================================================================= */}
-      {activeModal && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-black/85 backdrop-blur-2xl animate-in fade-in duration-200"
-          onClick={() => setActiveModal(null)}
-        >
-          <div
-            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-neutral-950/95 border border-white/15 rounded-3xl p-6 sm:p-8 lg:p-10 text-white shadow-[0_20px_70px_rgba(0,0,0,0.95)]"
-            onClick={(e) => e.stopPropagation()}
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
-          >
-            {/* Close Button */}
-            <button
-              onClick={() => setActiveModal(null)}
-              className="absolute top-6 right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 text-neutral-300 hover:text-white transition-colors"
-              aria-label="Close dialog"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {/* MODAL CONTENT: GULPIT */}
-            {activeModal === "gulpit" && (
-              <div>
-                {/* Header */}
-                <div className="mb-6">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs font-mono tracking-widest text-[#00BFFF] uppercase">
-                      AVINYATES PRODUCT PORTFOLIO
-                    </span>
-                    <span className="text-xs text-neutral-500">•</span>
-                    <span className="text-xs text-neutral-400">310 g Squeeze Bottles</span>
-                  </div>
-                  <h3 className="text-3xl sm:text-4xl font-bold tracking-tight text-white uppercase">
-                    GULPIT™ <span className="text-[#00BFFF] font-light">Spread Happiness</span>
-                  </h3>
-                  <p className="text-sm text-neutral-300 font-light mt-2 max-w-2xl leading-relaxed">
-                    Crafted through vacuum concentration technology to protect delicate natural fruit character, retaining pure aromas and vital enzymes without added preservatives or refined sugars.
-                  </p>
-                </div>
-
-                {/* Sub-tab Switcher: Savoury Collection vs Fruit Fusion */}
-                <div className="flex items-center gap-4 border-b border-white/10 pb-3 mb-6">
-                  <button
-                    onClick={() => setGulpitTab("savoury")}
-                    className={`text-sm font-medium transition-colors pb-1 relative cursor-pointer ${
-                      gulpitTab === "savoury" ? "text-[#00BFFF]" : "text-neutral-400 hover:text-white"
-                    }`}
-                  >
-                    Savoury Collection (5 Flavours)
-                    {gulpitTab === "savoury" && (
-                      <span className="absolute left-0 right-0 -bottom-3 h-[2px] bg-[#00BFFF]" />
-                    )}
-                  </button>
-                  <button
-                    onClick={() => setGulpitTab("fruit")}
-                    className={`text-sm font-medium transition-colors pb-1 relative cursor-pointer ${
-                      gulpitTab === "fruit" ? "text-[#00BFFF]" : "text-neutral-400 hover:text-white"
-                    }`}
-                  >
-                    Fruit Fusion Collection (5 Flavours)
-                    {gulpitTab === "fruit" && (
-                      <span className="absolute left-0 right-0 -bottom-3 h-[2px] bg-[#00BFFF]" />
-                    )}
-                  </button>
-                </div>
-
-                {/* Flavour Cards List */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                  {(gulpitTab === "savoury" ? gulpitSavouryFlavours : gulpitFruitFlavours).map(
-                    (flv, i) => (
-                      <div
-                        key={i}
-                        className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#00BFFF]/40 transition-colors"
-                      >
-                        <div className="flex items-center justify-between mb-2">
-                          <span
-                            className="text-[10px] font-mono tracking-widest uppercase font-semibold"
-                            style={{ color: flv.accent }}
-                          >
-                            {flv.tag}
-                          </span>
-                          <span className="text-[11px] text-neutral-400 font-mono">310 g</span>
-                        </div>
-                        <h4 className="text-lg font-medium text-white mb-1.5">{flv.name}</h4>
-                        <div className="text-xs text-neutral-400 font-light mb-2">
-                          <span className="text-neutral-300 font-normal">Ingredients:</span> {flv.ingredients}
-                        </div>
-                        <div className="text-xs text-neutral-400 font-light flex items-start gap-1.5 pt-2 border-t border-white/5">
-                          <Utensils className="w-3.5 h-3.5 text-[#00BFFF] shrink-0 mt-0.5" />
-                          <span><span className="text-neutral-300 font-normal">Pair with:</span> {flv.pairings}</span>
-                        </div>
-                      </div>
-                    )
-                  )}
-                </div>
-
-                {/* Technology Specs */}
-                <div className="p-5 rounded-2xl bg-[#00BFFF]/5 border border-[#00BFFF]/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                  <div>
-                    <div className="text-xs font-mono tracking-widest text-[#00BFFF] uppercase font-semibold mb-1">
-                      MANUFACTURING EXCELLENCE &bull; PALAKKAD FACILITY
-                    </div>
-                    <div className="text-xs text-neutral-300 font-light">
-                      Vacuum concentration boiling reduction &bull; Aseptic sterile filling &bull; Retort pack thermal validation
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs font-mono text-[#00BFFF] shrink-0">
-                    <ShieldCheck className="w-4 h-4" />
-                    <span>0% Preservatives</span>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* MODAL CONTENT: SNACKY'S */}
-            {activeModal === "snackys" && (
-              <div>
-                {/* Header */}
-                <div className="mb-6">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs font-mono tracking-widest text-[#00BFFF] uppercase">
-                      AVINYATES PRODUCT PORTFOLIO
-                    </span>
-                    <span className="text-xs text-neutral-500">•</span>
-                    <span className="text-xs text-neutral-400">125 g Canisters</span>
-                  </div>
-                  <h3 className="text-3xl sm:text-4xl font-bold tracking-tight text-white uppercase">
-                    SNACKY&apos;S™ <span className="text-[#00BFFF] font-light">It&apos;s yummy</span>
-                  </h3>
-                  <p className="text-sm text-neutral-300 font-light mt-2 max-w-2xl leading-relaxed">
-                    Artisanal fruit and root chips engineered via vacuum frying. Operating at reduced pressure allows gentle moisture extraction at lower temperatures, preserving cellular micronutrients and natural crispness while targeting significantly lower oil absorption.
-                  </p>
-                </div>
-
-                {/* 5 Flavour Canister Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                  {snackysFlavours.map((item, i) => (
-                    <div
-                      key={i}
-                      className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#00BFFF]/40 transition-colors flex flex-col justify-between"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between mb-2">
-                          <span
-                            className="text-[10px] font-mono tracking-widest uppercase font-semibold"
-                            style={{ color: item.lid }}
-                          >
-                            {item.seasoning}
-                          </span>
-                          <span className="text-[11px] text-neutral-400 font-mono">125 g Can</span>
-                        </div>
-                        <h4 className="text-lg font-medium text-white mb-1">{item.name}</h4>
-                        <p className="text-xs text-neutral-400 font-light leading-relaxed mb-3">
-                          {item.desc}
-                        </p>
-                      </div>
-                      <div className="text-[11px] text-neutral-400 font-light pt-2 border-t border-white/5 flex items-center gap-2">
-                        <Sparkles className="w-3.5 h-3.5 text-[#00BFFF]" />
-                        <span>Source: <strong className="text-neutral-300 font-normal">{item.ingredient}</strong></span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Technology Specs */}
-                <div className="p-5 rounded-2xl bg-[#00BFFF]/5 border border-[#00BFFF]/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                  <div>
-                    <div className="text-xs font-mono tracking-widest text-[#00BFFF] uppercase font-semibold mb-1">
-                      VACUUM FRYING INNOVATION &bull; PALAKKAD FACILITY
-                    </div>
-                    <div className="text-xs text-neutral-300 font-light">
-                      Reduced-pressure dehydration &bull; Lower-oil ambition &bull; Zero synthetic colorants &bull; Non-GMO roots
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs font-mono text-[#00BFFF] shrink-0">
-                    <ShieldCheck className="w-4 h-4" />
-                    <span>Clean Label Standards</span>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </div>
   );
 }
