@@ -8,7 +8,7 @@ import { Leaf, FlaskConical, Heart, ArrowRight, X, Sparkles, Utensils, ShieldChe
 
 export default function FMCGPage() {
   const [activeModal, setActiveModal] = useState<"gulpit" | "snackys" | null>(null);
-  const [gulpitTab, setGulpitTab] = useState<"savoury" | "fruit">("savoury");
+  const [gulpitTab, setGulpitTab] = useState<"savoury" | "fruit">("fruit");
 
   // Official Gulpit Flavours from Avinyates Corporate Brochure
   const gulpitSavouryFlavours = [
@@ -232,14 +232,46 @@ export default function FMCGPage() {
 
             {/* Right Sub-column: 5-Bottle Collection Image with Glossy Reflection */}
             <div className="md:col-span-7 relative flex flex-col items-center justify-end">
+              {/* Collection Switcher Pills */}
+              <div className="flex items-center gap-2 mb-3 z-10">
+                <button
+                  onClick={() => setGulpitTab("fruit")}
+                  className={`px-3 py-1 rounded-full text-xs font-medium tracking-wide transition-all cursor-pointer ${
+                    gulpitTab === "fruit"
+                      ? "bg-[#00BFFF] text-black shadow-[0_0_15px_rgba(0,191,255,0.5)]"
+                      : "bg-white/10 text-neutral-300 hover:text-white border border-white/10"
+                  }`}
+                >
+                  Tropical Collection
+                </button>
+                <button
+                  onClick={() => setGulpitTab("savoury")}
+                  className={`px-3 py-1 rounded-full text-xs font-medium tracking-wide transition-all cursor-pointer ${
+                    gulpitTab === "savoury"
+                      ? "bg-[#00BFFF] text-black shadow-[0_0_15px_rgba(0,191,255,0.5)]"
+                      : "bg-white/10 text-neutral-300 hover:text-white border border-white/10"
+                  }`}
+                >
+                  Savoury Collection
+                </button>
+              </div>
+
               {/* Soft floor glow */}
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4/5 h-10 bg-[#00BFFF]/15 rounded-full blur-2xl pointer-events-none" />
 
               {/* Main Product Lineup */}
               <div className="relative w-full aspect-[16/10] sm:aspect-[16/10.5]">
                 <Image
-                  src="/brands/gulpit_collection.png"
-                  alt="Gulpit Savoury Spread Collection - 5 Bottles"
+                  src={
+                    gulpitTab === "fruit"
+                      ? "/brands/gulpit/gulpit_tropical_collection.png"
+                      : "/brands/gulpit/gulpit_savoury_spread_collection.png"
+                  }
+                  alt={
+                    gulpitTab === "fruit"
+                      ? "Gulpit Tropical Sauce Collection - 5 Bottles"
+                      : "Gulpit Savoury Spread Collection - 5 Bottles"
+                  }
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 40vw"
@@ -252,7 +284,11 @@ export default function FMCGPage() {
               <div className="relative w-full h-12 sm:h-16 -mt-1 overflow-hidden opacity-30 scale-y-[-1] pointer-events-none [mask-image:linear-gradient(to_bottom,black_10%,transparent_90%)] blur-[0.6px]">
                 <div className="relative w-full aspect-[16/10] sm:aspect-[16/10.5]">
                   <Image
-                    src="/brands/gulpit_collection.png"
+                    src={
+                      gulpitTab === "fruit"
+                        ? "/brands/gulpit/gulpit_tropical_collection.png"
+                        : "/brands/gulpit/gulpit_savoury_spread_collection.png"
+                    }
                     alt="Gulpit Floor Reflection"
                     fill
                     sizes="(max-width: 768px) 100vw, 40vw"

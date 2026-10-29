@@ -34,6 +34,7 @@ interface FlavourItem {
 export default function GulpitPage() {
   const [selectedFlavour, setSelectedFlavour] = useState<FlavourItem | null>(null);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [heroCollection, setHeroCollection] = useState<"tropical" | "savoury">("tropical");
 
   // All 10 Official Gulpit Flavours matching template exactly
   const flavours: FlavourItem[] = [
@@ -242,16 +243,48 @@ export default function GulpitPage() {
             </div>
           </div>
 
-          {/* Right Column: Gulpit Savoury Spread Collection Hero Visual */}
+          {/* Right Column: Gulpit Tropical / Savoury Collection Hero Visual */}
           <div className="lg:col-span-6 relative flex flex-col items-center justify-end">
+            {/* Collection Switcher Pills */}
+            <div className="flex items-center gap-2 mb-4 z-10">
+              <button
+                onClick={() => setHeroCollection("tropical")}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all cursor-pointer ${
+                  heroCollection === "tropical"
+                    ? "bg-[#00BFFF] text-black shadow-[0_0_15px_rgba(0,191,255,0.5)]"
+                    : "bg-white/10 text-neutral-300 hover:text-white border border-white/10"
+                }`}
+              >
+                Tropical Collection
+              </button>
+              <button
+                onClick={() => setHeroCollection("savoury")}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all cursor-pointer ${
+                  heroCollection === "savoury"
+                    ? "bg-[#00BFFF] text-black shadow-[0_0_15px_rgba(0,191,255,0.5)]"
+                    : "bg-white/10 text-neutral-300 hover:text-white border border-white/10"
+                }`}
+              >
+                Savoury Collection
+              </button>
+            </div>
+
             {/* Ambient Cyan Base Glow */}
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-4/5 h-20 bg-[#00BFFF]/20 rounded-full blur-3xl pointer-events-none" />
 
             {/* High-res 5-Bottle Collection (Seamless Transparent PNG, Box-less) */}
             <div className="relative w-full aspect-[16/9] max-w-[680px]">
               <Image
-                src="/brands/gulpit/gulpit_savoury_spread_collection.png"
-                alt="Gulpit Savoury Spread Collection"
+                src={
+                  heroCollection === "tropical"
+                    ? "/brands/gulpit/gulpit_tropical_collection.png"
+                    : "/brands/gulpit/gulpit_savoury_spread_collection.png"
+                }
+                alt={
+                  heroCollection === "tropical"
+                    ? "Gulpit Tropical Sauce Collection"
+                    : "Gulpit Savoury Spread Collection"
+                }
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -263,7 +296,11 @@ export default function GulpitPage() {
             <div className="relative w-full h-12 sm:h-16 -mt-1 overflow-hidden opacity-25 scale-y-[-1] pointer-events-none [mask-image:linear-gradient(to_bottom,black_10%,transparent_85%)] blur-[0.6px]">
               <div className="relative w-full aspect-[16/9] max-w-[680px] mx-auto">
                 <Image
-                  src="/brands/gulpit/gulpit_savoury_spread_collection.png"
+                  src={
+                    heroCollection === "tropical"
+                      ? "/brands/gulpit/gulpit_tropical_collection.png"
+                      : "/brands/gulpit/gulpit_savoury_spread_collection.png"
+                  }
                   alt="Gulpit Floor Reflection"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
