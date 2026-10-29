@@ -13,11 +13,11 @@ export default function FMCGPage() {
   // Official Gulpit Flavours from Avinyates Corporate Brochure
   const gulpitSavouryFlavours = [
     {
-      name: "Moringa Coconut Chilli",
+      name: "Coconut Chilli Chutney",
       tag: "INDIAN-INSPIRED",
-      ingredients: "Moringa, Coconut, Green Chilli, Mint",
+      ingredients: "Coconut, Green Chilli, Curry Leaf, Cold-Pressed Oil",
       pairings: "Dosa, idli, wraps, savoury rolls and dipping platters",
-      accent: "#10b981",
+      accent: "#00BFFF",
     },
     {
       name: "Smoky Tomato Relish",
@@ -292,15 +292,22 @@ export default function FMCGPage() {
                 Artisanal slow-roasted snacks made from ancient grains, nutrient-rich ingredients and clean seasonings. Wholesome indulgence for everyday living.
               </p>
 
-              {/* Pill Button with Cyan Border - Opens Brochure Details Modal */}
-              <div>
-                <button
-                  onClick={() => setActiveModal("snackys")}
+              {/* Pill Button with Cyan Border - Links to dedicated Snacky's Page */}
+              <div className="flex flex-wrap items-center gap-3">
+                <Link
+                  href="/snackys"
                   className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-[#00BFFF]/70 hover:border-[#00BFFF] bg-black/40 hover:bg-[#00BFFF]/10 text-xs sm:text-sm text-white font-light tracking-wide transition-all duration-300 group shadow-lg shadow-black/80 cursor-pointer"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   <span>Explore Snacky&apos;s</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#00BFFF] transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+                <button
+                  onClick={() => setActiveModal("snackys")}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/20 hover:border-white/50 bg-black/30 text-xs text-neutral-300 hover:text-white transition-all duration-300 cursor-pointer"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  <span>Quick Specs</span>
                 </button>
               </div>
             </div>

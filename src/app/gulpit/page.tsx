@@ -39,15 +39,15 @@ export default function GulpitPage() {
   const flavours: FlavourItem[] = [
     // Row 1: Savoury Collection
     {
-      id: "moringa-chilli",
-      name: "Moringa Coconut Chilli",
+      id: "coconut-chilli",
+      name: "Coconut Chilli Chutney",
       tag: "INDIAN-INSPIRED",
       category: "savoury",
-      desc: "A refreshing blend of moringa, coconut and green chilli.",
-      image: "/brands/gulpit/moringa_coconut_chilli.png",
-      ingredients: "Moringa, Coconut, Green Chilli, Mint, Cold-Pressed Oil",
+      desc: "A refreshing blend of grated coconut, green chilli and curry leaf.",
+      image: "/brands/gulpit/coconut_chilli_chutney.png",
+      ingredients: "Fresh Coconut, Green Chilli, Curry Leaf, Cold-Pressed Oil",
       pairings: "Dosa, idli, wraps, savoury rolls and dipping platters",
-      accent: "#10b981",
+      accent: "#00BFFF",
     },
     {
       id: "smoky-tomato",
@@ -559,7 +559,7 @@ export default function GulpitPage() {
             Gulpit
             <span className="absolute left-0 right-0 -bottom-1 h-[2px] bg-[#00BFFF] rounded-full" />
           </span>
-          <Link href="/businesses/fmcg" className="text-neutral-300 hover:text-white transition-colors">
+          <Link href="/snackys" className="text-neutral-300 hover:text-white transition-colors">
             Snacky&apos;s
           </Link>
           <Link href="/businesses/aerospace-defence" className="text-neutral-300 hover:text-white transition-colors">
