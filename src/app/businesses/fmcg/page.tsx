@@ -200,7 +200,7 @@ export default function FMCGPage() {
                 className="text-sm sm:text-base text-[#00BFFF] font-normal tracking-wide mt-2 mb-4"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                Pure Refreshment. Zero Compromise.
+                Spread Happiness
               </p>
 
               <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed mb-6 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">
