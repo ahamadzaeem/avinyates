@@ -189,6 +189,14 @@ export default function GulpitPage() {
               </span>
             </div>
 
+            {/* Tagline */}
+            <p
+              className="text-sm sm:text-base text-[#00BFFF] font-normal tracking-wide mb-4"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              Spread Happiness
+            </p>
+
             {/* Main Headline */}
             <h1
               className="text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-bold text-white tracking-tight leading-[1.05] drop-shadow-[0_2px_25px_rgba(0,0,0,0.95)]"

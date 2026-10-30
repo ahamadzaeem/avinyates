@@ -269,14 +269,14 @@ export default function FMCGPage() {
                 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-wide uppercase drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)]"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                SNACKY&apos;S<span className="text-xl sm:text-2xl font-light align-super">™</span>
+                SNACKYS<span className="text-xl sm:text-2xl font-light align-super">™</span>
               </h2>
 
               <p
                 className="text-sm sm:text-base text-[#00BFFF] font-normal tracking-wide mt-2 mb-4"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                Crave Clean. Snack Pure.
+                It&apos;s Yummy
               </p>
 
               <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed mb-6 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">
@@ -290,7 +290,7 @@ export default function FMCGPage() {
                   className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-[#00BFFF]/70 hover:border-[#00BFFF] bg-black/40 hover:bg-[#00BFFF]/10 text-xs sm:text-sm text-white font-light tracking-wide transition-all duration-300 group shadow-lg shadow-black/80 cursor-pointer"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  <span>Explore Snacky&apos;s</span>
+                  <span>Explore Snackys</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#00BFFF] transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </div>

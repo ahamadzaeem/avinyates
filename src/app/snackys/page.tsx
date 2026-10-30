@@ -134,9 +134,17 @@ export default function SnackysPage() {
                 className="text-[11px] sm:text-xs tracking-[0.28em] text-[#00BFFF] uppercase font-semibold"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                SNACKY&apos;S™ / ARTISANAL CRISPS
+                SNACKYS™ / ARTISANAL CRISPS
               </span>
             </div>
+
+            {/* Tagline */}
+            <p
+              className="text-sm sm:text-base text-[#00BFFF] font-normal tracking-wide mb-4"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              It&apos;s Yummy
+            </p>
 
             {/* Headline */}
             <h1
@@ -504,7 +512,7 @@ export default function SnackysPage() {
 
         {/* Legal Disclaimer */}
         <div className="text-center md:text-left text-neutral-400 max-w-md leading-relaxed text-[11px]">
-          &copy; 2026 AVINYATES INDIA PRIVATE LIMITED. SNACKY&apos;S&trade; is a registered trademark under the FMCG &amp; Food Revolution Division.
+          &copy; 2026 AVINYATES INDIA PRIVATE LIMITED. SNACKYS&trade; is a registered trademark under the FMCG &amp; Food Revolution Division.
         </div>
 
         {/* Links */}
