@@ -118,7 +118,7 @@ export default function GulpitPage() {
       accent: "#facc15",
     },
     {
-      id: "coconut-chilli",
+      id: "tender-coconut-chilli",
       name: "Tender Coconut Chilli",
       tag: "CREAMY WARMTH",
       category: "fruit",
